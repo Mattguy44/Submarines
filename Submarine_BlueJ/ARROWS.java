@@ -5,7 +5,7 @@
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class ARROWS implements Submarine
+public class ARROWS extends Submarine
 {
     // instance variables - replace the example below with your own
     private int x;
