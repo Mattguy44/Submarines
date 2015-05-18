@@ -5,17 +5,26 @@
  * @author (your name) 
  * @version (a version number or a date)
  */
+import java.awt.event.*;
+
 public class Torpedo
 {
-    int speed;
-    boolean isUnderwater;
+    private int speed;
+    private boolean isUnderwater;
+    private int locationX,locationY;
     /**
      * Constructor for objects of class Torpedo
      */
-    public Torpedo(int s, boolean uw)
+    public Torpedo(int s, boolean uw,int x,int y)
     {
         speed = s;
         isUnderwater = uw;
+        locationX=x;
+        locationY=y;
     }
-
+    
+    public class Launch implements ActionListener{
+    public void actionPerformed(ActionEvent evt){
+    }
+    }
 }
