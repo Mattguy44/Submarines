@@ -12,6 +12,7 @@ public class Torpedo
     private int speed;
     private boolean isUnderwater;
     private int locationX,locationY;
+    private String facing;
     /**
      * Constructor for objects of class Torpedo
      */
@@ -23,8 +24,11 @@ public class Torpedo
         locationY=y;
     }
     
+    
+    
     public class Launch implements ActionListener{
     public void actionPerformed(ActionEvent evt){
+       
     }
     }
 }
