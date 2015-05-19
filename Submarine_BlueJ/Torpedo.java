@@ -17,5 +17,6 @@ public class Torpedo
         speed = s;
         isUnderwater = uw;
     }
-
+    public void fire(){
+    }
 }

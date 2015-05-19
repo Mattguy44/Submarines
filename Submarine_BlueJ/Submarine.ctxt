@@ -1,6 +1,6 @@
 #BlueJ class context
-comment0.params=isUnder
-comment0.target=Submarine(boolean)
+comment0.params=isUnder\ torpedoes
+comment0.target=Submarine(boolean,\ int)
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
 numComments=2

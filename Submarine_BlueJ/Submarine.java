@@ -9,7 +9,7 @@ import javax.swing.*;
 public abstract class Submarine extends JFrameAdded
 {
     private boolean isUnderwater = true;
-    public Submarine(boolean isUnder){
+    public Submarine(boolean isUnder, int torpedoes){
         isUnderwater=isUnder;
     }
     public static void main(String [] args){
