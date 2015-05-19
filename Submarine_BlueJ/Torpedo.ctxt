@@ -1,6 +1,6 @@
 #BlueJ class context
-comment0.params=s\ uw
-comment0.target=Torpedo(int,\ boolean)
+comment0.params=s\ uw\ x\ y
+comment0.target=Torpedo(int,\ boolean,\ int,\ int)
 comment0.text=\n\ Constructor\ for\ objects\ of\ class\ Torpedo\n
 comment1.params=
 comment1.target=void\ fire()
