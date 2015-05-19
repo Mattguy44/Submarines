@@ -13,6 +13,7 @@ public class Torpedo
     private boolean isUnderwater;
     private int locationX,locationY;
     private String facing;
+    private int a;
     /**
      * Constructor for objects of class Torpedo
      */
