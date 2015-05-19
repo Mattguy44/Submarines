@@ -1,11 +1,14 @@
 #BlueJ package file
+dependency1.from=Submarine
+dependency1.to=Torpedo
+dependency1.type=UsesDependency
 objectbench.height=76
 objectbench.width=668
 package.editor.height=400
 package.editor.width=566
 package.editor.x=548
 package.editor.y=409
-package.numDependencies=0
+package.numDependencies=1
 package.numTargets=5
 package.showExtends=true
 package.showUses=true
@@ -51,8 +54,8 @@ target3.x=130
 target3.y=120
 target4.editor.height=700
 target4.editor.width=900
-target4.editor.x=200
-target4.editor.y=23
+target4.editor.x=269
+target4.editor.y=187
 target4.height=50
 target4.name=Submarine
 target4.naviview.expanded=true
