@@ -2,6 +2,10 @@
 dependency1.from=Submarine
 dependency1.to=Torpedo
 dependency1.type=UsesDependency
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> e96527ed59366765c908b7c3cc861678378b21cf
 dependency2.from=Torpedo
 dependency2.to=Submarine
 dependency2.type=UsesDependency
@@ -9,6 +13,7 @@ dependency3.from=SimpleTorpedo
 dependency3.to=SimpleSubmarine
 dependency3.type=UsesDependency
 objectbench.height=100
+<<<<<<< HEAD
 objectbench.width=977
 package.editor.height=400
 package.editor.width=875
@@ -16,13 +21,44 @@ package.editor.x=498
 package.editor.y=199
 package.numDependencies=3
 package.numTargets=7
+=======
+objectbench.width=672
+package.editor.height=400
+package.editor.width=875
+package.editor.x=434
+package.editor.y=91
+package.numDependencies=3
+package.numTargets=7
+=======
+objectbench.height=76
+objectbench.width=668
+package.editor.height=400
+package.editor.width=566
+package.editor.x=245
+package.editor.y=97
+package.numDependencies=1
+package.numTargets=5
+>>>>>>> 0404d4bd2e73765fe1c3c203a426c8c207f1e17b
+>>>>>>> e96527ed59366765c908b7c3cc861678378b21cf
 package.showExtends=true
 package.showUses=true
 project.charset=UTF-8
 target1.editor.height=700
+<<<<<<< HEAD
 target1.editor.width=900
 target1.editor.x=826
 target1.editor.y=126
+=======
+<<<<<<< HEAD
+target1.editor.width=900
+target1.editor.x=826
+target1.editor.y=126
+=======
+target1.editor.width=1126
+target1.editor.x=241
+target1.editor.y=294
+>>>>>>> 0404d4bd2e73765fe1c3c203a426c8c207f1e17b
+>>>>>>> e96527ed59366765c908b7c3cc861678378b21cf
 target1.height=50
 target1.name=WASD
 target1.naviview.expanded=false
@@ -30,7 +66,15 @@ target1.showInterface=false
 target1.type=ClassTarget
 target1.typeParameters=
 target1.width=80
+<<<<<<< HEAD
 target1.x=320
+=======
+<<<<<<< HEAD
+target1.x=320
+=======
+target1.x=300
+>>>>>>> 0404d4bd2e73765fe1c3c203a426c8c207f1e17b
+>>>>>>> e96527ed59366765c908b7c3cc861678378b21cf
 target1.y=120
 target2.editor.height=700
 target2.editor.width=900
@@ -43,17 +87,39 @@ target2.showInterface=false
 target2.type=ClassTarget
 target2.typeParameters=
 target2.width=80
+<<<<<<< HEAD
 target2.x=440
 target2.y=120
 target3.editor.height=700
 target3.editor.width=900
 target3.editor.x=910
 target3.editor.y=82
+=======
+<<<<<<< HEAD
+target2.x=440
+target2.y=120
+target3.editor.height=700
+target3.editor.width=900
+target3.editor.x=910
+target3.editor.y=82
+=======
+target2.x=430
+target2.y=120
+target3.editor.height=700
+target3.editor.width=900
+target3.editor.x=826
+target3.editor.y=126
+>>>>>>> 0404d4bd2e73765fe1c3c203a426c8c207f1e17b
+>>>>>>> e96527ed59366765c908b7c3cc861678378b21cf
 target3.height=50
 target3.name=SimpleTorpedo
 target3.naviview.expanded=true
 target3.showInterface=false
 target3.type=ClassTarget
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> e96527ed59366765c908b7c3cc861678378b21cf
 target3.typeParameters=
 target3.width=110
 target3.x=70
@@ -62,20 +128,56 @@ target4.editor.height=700
 target4.editor.width=900
 target4.editor.x=263
 target4.editor.y=227
+<<<<<<< HEAD
+=======
+=======
+target3.typeParameters=<HEAD>
+target3.width=130
+target3.x=170
+target3.y=200
+target4.editor.height=789
+target4.editor.width=1748
+target4.editor.x=33
+target4.editor.y=157
+>>>>>>> 0404d4bd2e73765fe1c3c203a426c8c207f1e17b
+>>>>>>> e96527ed59366765c908b7c3cc861678378b21cf
 target4.height=50
 target4.name=Torpedo
 target4.naviview.expanded=false
 target4.showInterface=false
+<<<<<<< HEAD
 target4.type=ClassTarget
 target4.typeParameters=
 target4.width=80
 target4.x=170
 target4.y=120
+=======
+<<<<<<< HEAD
+target4.type=ClassTarget
+target4.typeParameters=
+target4.width=80
+target4.x=130
+target4.y=120
+target5.editor.height=755
+target5.editor.width=1050
+target5.editor.x=125
+target5.editor.y=156
+target5.height=50
+target5.name=Submarine
+target5.naviview.expanded=true
+=======
+target4.type=AbstractTarget
+target4.typeParameters=<HEAD>
+target4.width=150
+target4.x=350
+target4.y=10
+>>>>>>> e96527ed59366765c908b7c3cc861678378b21cf
 target5.editor.height=700
 target5.editor.width=901
 target5.editor.x=125
 target5.editor.y=156
 target5.height=50
+<<<<<<< HEAD
 target5.name=Submarine
 target5.naviview.expanded=true
 target5.showInterface=false
@@ -110,3 +212,46 @@ target7.typeParameters=
 target7.width=130
 target7.x=220
 target7.y=250
+=======
+target5.name=JFrameAdded
+target5.naviview.expanded=false
+>>>>>>> 0404d4bd2e73765fe1c3c203a426c8c207f1e17b
+target5.showInterface=false
+target5.type=AbstractTarget
+target5.typeParameters=
+<<<<<<< HEAD
+target5.width=90
+target5.x=350
+target5.y=10
+target6.editor.height=700
+target6.editor.width=900
+target6.editor.x=0
+target6.editor.y=0
+target6.height=50
+target6.name=JFrameAdded
+target6.naviview.expanded=true
+target6.showInterface=false
+target6.type=ClassTarget
+target6.typeParameters=
+target6.width=110
+target6.x=70
+target6.y=10
+target7.editor.height=674
+target7.editor.width=900
+target7.editor.x=966
+target7.editor.y=0
+target7.height=50
+target7.name=SimpleSubmarine
+target7.naviview.expanded=true
+target7.showInterface=false
+target7.type=ClassTarget
+target7.typeParameters=
+target7.width=130
+target7.x=220
+target7.y=250
+=======
+target5.width=110
+target5.x=70
+target5.y=10
+>>>>>>> 0404d4bd2e73765fe1c3c203a426c8c207f1e17b
+>>>>>>> e96527ed59366765c908b7c3cc861678378b21cf
