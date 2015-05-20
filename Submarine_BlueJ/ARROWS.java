@@ -1,4 +1,5 @@
-
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 /**
  * Write a description of class Arrows here.
  * 
@@ -9,25 +10,42 @@ public class ARROWS extends Submarine
 {
     // instance variables - replace the example below with your own
     private int x;
-
-    /**
-     * Constructor for objects of class Arrows
-     */
-    public ARROWS()
+    private int y;
+    private boolean underWater = false;
+    private int numTorpedoes;
+    // Rshift for shoot
+    // "/"  for under
+    public ARROWS(boolean isUnder, int torpedoes)
     {
-        // initialise instance variables
-        x = 0;
+       super(isUnder, torpedoes);
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+        public void keyPressed(KeyEvent e){
+        int key = e.getKeyCode();
+        if (key == KeyEvent.VK_LEFT) {
+            x = -25;
+        }
+        if (key == KeyEvent.VK_RIGHT) {
+            x = 25;
+        }
+        if (key == KeyEvent.VK_UP) {
+            y = -25;
+        }
+        if (key == KeyEvent.VK_DOWN) {
+            y = 25;
+        }
+    }
+    public void keyReleased(KeyEvent e){
+        int key = e.getKeyCode();
+        if (key == KeyEvent.VK_SHIFT) {
+            numTorpedoes--;
+        }
+        if (key == KeyEvent.VK_SLASH){
+            if(underWater == false){
+                underWater = true;
+            }
+            else{
+                underWater = false;
+            }
+        }
     }
 }
