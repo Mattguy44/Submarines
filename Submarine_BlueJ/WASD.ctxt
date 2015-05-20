@@ -1,8 +1,8 @@
 #BlueJ class context
-comment0.params=
-comment0.target=WASD()
-comment0.text=\n\ Constructor\ for\ objects\ of\ class\ WASD\n
-comment1.params=y
-comment1.target=int\ sampleMethod(int)
-comment1.text=\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\n\ \n\ @param\ \ y\ \ \ a\ sample\ parameter\ for\ a\ method\n\ @return\ \ \ \ \ the\ sum\ of\ x\ and\ y\ \n
-numComments=2
+comment0.params=isUnder\ torpedoes
+comment0.target=WASD(boolean,\ int)
+comment1.params=e
+comment1.target=void\ keyPressed(java.awt.event.KeyEvent)
+comment2.params=e
+comment2.target=void\ keyReleased(java.awt.event.KeyEvent)
+numComments=3
