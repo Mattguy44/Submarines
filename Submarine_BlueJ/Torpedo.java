@@ -48,11 +48,11 @@ public class Torpedo
                 else if(direction.equals("r") || direction.equals("R")
                 || direction.equals("right") || direction.equals("RIGHT"))
                 centerX+=speed; 
-                else if(direction.equals("f") || direction.equals("F")
-                || direction.equals("forward") || direction.equals("FORWARD"))
+                else if(direction.equals("u") || direction.equals("U")
+                || direction.equals("up") || direction.equals("UP"))
                 centerY-=speed;
-                else if(direction.equals("b") || direction.equals("B")
-                || direction.equals("backward") || direction.equals("BACKWARD"))
+                else if(direction.equals("d") || direction.equals("D")
+                || direction.equals("down") || direction.equals("DOWN"))
                 centerY+=speed;
                 else
                 System.out.print("Error: check if right direction is assigned!");
@@ -73,13 +73,13 @@ public class Torpedo
                 centerX=control.getCenterX()+tWidth;
                 centerY=control.getCenterY();
             }
-                else if(direction.equals("f") || direction.equals("F")
-                || direction.equals("forward") || direction.equals("FORWARD")){
+                else if(direction.equals("u") || direction.equals("U")
+                || direction.equals("up") || direction.equals("UP")){
                 centerX=control.getCenterX();
                 centerY=control.getCenterY()-tHeight;
             }    
-                else if(direction.equals("b") || direction.equals("B")
-                || direction.equals("backward") || direction.equals("BACKWARD")){
+                else if(direction.equals("d") || direction.equals("D")
+                || direction.equals("down") || direction.equals("DOWN")){
                 centerX=control.getCenterX();
                 centerY=control.getCenterY()+tHeight;
             }    
