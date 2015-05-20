@@ -14,7 +14,7 @@ public class SimpleTorpedo
     private boolean isFiring;
     private String direction;
     private boolean [][] obstacle; //SimpleSubmarine doesn't count
-    private final int tWidth=5,tHeight=5; //Example
+    private final int tWidth=6,tHeight=6; //Example
     /**
      * Constructor to create a Torpedo with right location, direction, known map, and other states.
      */
@@ -30,8 +30,8 @@ public class SimpleTorpedo
         isFiring=false;
     }
 
-    public int update(SimpleSubmarine opp){ //if the torpedo is firing, react correspondingly
-        int speedSub=0;
+    public void update(SimpleSubmarine opp){ //if the torpedo is firing, react correspondingly
+        
         if(isFiring){
             if(obstacle[centerX][centerY]){ 
                 isFiring=false;
@@ -47,67 +47,91 @@ public class SimpleTorpedo
                 if(direction.equals ("l")){
                     int ix=1;
                     int speedAtGivenTime=0;
-                    while(ix<=speedTor&&!obstacle[centerX][centerY]){
+                    while(ix<=speedTor&&!obstacle[centerX-tWidth/2][centerY]){
                         ix++;
                     }
                     speedAtGivenTime=ix;
                     centerX-=speedAtGivenTime;
-                    speedSub=speedAtGivenTime;
                 }
                 else if(direction.equals("r")){
                     int ix=1;
                     int speedAtGivenTime=0;
-                    while(ix<=speedTor&&!obstacle[centerX][centerY]){
+                    while(ix<=speedTor&&!obstacle[centerX+tWidth/2][centerY]){
                         ix++;
                     }
                     speedAtGivenTime=ix;
                     centerX+=speedAtGivenTime;
-                    speedSub=speedAtGivenTime;
                 }
                 else if(direction.equals("u")){
                     int ix=1;
                     int speedAtGivenTime=0;
-                    while(ix<=speedTor&&!obstacle[centerX][centerY]){
+                    while(ix<=speedTor&&!obstacle[centerX][centerY-tHeight/2]){
                         ix++;
                     }
                     speedAtGivenTime=ix;
                     centerY-=speedAtGivenTime;
-                    speedSub=speedAtGivenTime;
                 }
                 else if(direction.equals("d")){
                     int ix=1;
                     int speedAtGivenTime=0;
-                    while(ix<=speedTor&&!obstacle[centerX][centerY]){
+                    while(ix<=speedTor&&!obstacle[centerX][centerY+tHeight/2]){
                         ix++;
                     }
                     speedAtGivenTime=ix;
                     centerY+=speedAtGivenTime;
-                    speedSub=speedAtGivenTime;
                 }
                 else
                     System.out.print("Error: check if right direction is assigned!");
             }
         }
-        return speedSub;//mistake here
     }
 
-    public void draw(Graphics g,SimpleSubmarine control){ //draw the Torpedo
+    public int draw(Graphics g,SimpleSubmarine control){ //draw the Torpedo
+        int finalSpeed=0;
         if( !isFiring) {
             if(direction.equals("l")){
-                centerX=control.getCenterX()-speedSub;
+                int ix=1;
+                int speedAtGivenTime=0;
+                while(ix<=speedSub&&!obstacle[centerX-tWidth/2][centerY]){
+                  ix++;
+                }
+                speedAtGivenTime=ix;
+                finalSpeed=speedAtGivenTime;
+                centerX=control.getCenterX()-speedAtGivenTime;
                 centerY=control.getCenterY();
             }
             else if(direction.equals("r")){
-                centerX=control.getCenterX()+speedSub;
+                int ix=1;
+                int speedAtGivenTime=0;
+                while(ix<=speedSub&&!obstacle[centerX+tWidth/2][centerY]){
+                  ix++;
+                }
+                speedAtGivenTime=ix;
+                finalSpeed=speedAtGivenTime;
+                centerX=control.getCenterX()+speedAtGivenTime;
                 centerY=control.getCenterY();
             }
             else if(direction.equals("u")){
+                int ix=1;
+                int speedAtGivenTime=0;
+                while(ix<=speedSub&&!obstacle[centerX][centerY-tHeight/2]){
+                  ix++;
+                }
+                speedAtGivenTime=ix;
+                finalSpeed=speedAtGivenTime;
                 centerX=control.getCenterX();
-                centerY=control.getCenterY()-speedSub;
+                centerY=control.getCenterY()-speedAtGivenTime;
             }    
             else if(direction.equals("d")){
+                int ix=1;
+                int speedAtGivenTime=0;
+                while(ix<=speedSub&&!obstacle[centerX][centerY+tHeight/2]){
+                  ix++;
+                }
+                speedAtGivenTime=ix;
+                finalSpeed=speedAtGivenTime;
                 centerX=control.getCenterX();
-                centerY=control.getCenterY()+speedSub;
+                centerY=control.getCenterY()+speedAtGivenTime;
             }    
             else
                 System.out.print("Error: check if right direction is assigned!");
@@ -116,5 +140,7 @@ public class SimpleTorpedo
         g.setColor(new Color(155,0,0));
         g.fillOval(centerX-tWidth/2,centerY-tHeight/2,tWidth,tHeight);
         //Make the Torpedo a circle for convenience.
+        
+        return finalSpeed;
     }
 }
