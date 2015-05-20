@@ -1,4 +1,5 @@
-
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 /**
  * Write a description of class WASD here.
  * 
@@ -7,27 +8,44 @@
  */
 public class WASD extends Submarine
 {
-    // instance variables - replace the example below with your own
     private int x;
-
-    /**
-     * Constructor for objects of class WASD
-     */
-    public WASD()
+    private int y;
+    private boolean underWater = false;
+    private int numTorpedoes;
+    //X for under
+    //space for shoot
+    public WASD(boolean isUnder, int torpedoes)
     {
-        // initialise instance variables
-        x = 0;
+        super(isUnder,torpedoes);
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    public void keyPressed(KeyEvent e){
+        int key = e.getKeyCode();
+        if (key == KeyEvent.VK_A) {
+            x = -25;
+        }
+        if (key == KeyEvent.VK_D) {
+            x = 25;
+        }
+        if (key == KeyEvent.VK_W) {
+            y = -25;
+        }
+        if (key == KeyEvent.VK_S) {
+            y = 25;
+        }
+    }
+    public void keyReleased(KeyEvent e){
+        int key = e.getKeyCode();
+        if (key == KeyEvent.VK_SPACE) {
+            numTorpedoes--;
+        }
+        if (key == KeyEvent.VK_X){
+            if(underWater == false){
+                underWater = true;
+            }
+            else{
+                underWater = false;
+            }
+        }
     }
 }
