@@ -17,7 +17,7 @@ public class Torpedo
     /**
      * Constructor to create a Torpedo with right location, direction, known map, and other states.
      */
-    public Torpedo(boolean [][] o,String dir,int x,int y,int s, boolean uw,boolean fire)
+    public Torpedo(boolean [][] o,String dir,int x,int y,int s, boolean uw)
     {
         obstacle=o;
         direction=dir;
@@ -25,21 +25,19 @@ public class Torpedo
         centerY=y;
         speed = s;
         isUnderwater = uw;
-        isFiring=fire;
     }
     
     
     
     public void update(Submarine opp){ //if the torpedo is firing, react correspondingly
-        if(isFiring){
             if(obstacle[centerX][centerY]){ 
-                isFiring=false;
+                Torpedo this=null;
             }
             /*else if(Math.abs(opp.getCenterX-centerX)<= opp.getWidth()/2.
             &&      Math.abs(opp.getCenterX-centerY)<= opp.getHeight()/2.){
                 opp.setExploding (true);
                 opp.setFrameNumber (1);        
-                isFiring=false;
+                Torpedo=null;
             }*/
             else{
                 if(direction.equals ("l") || direction.equals("L")
@@ -59,36 +57,9 @@ public class Torpedo
             }
             //Note: the 4 choices in every if statements should be restricted to one, I add them because I would 
             //like to know what's your guys' prefered parameter as direction
-        }
     }
-    public void draw(Graphics g,Submarine control){ //draw the Torpedo
-        /*if( !isFiring) {
-           if(direction.equals("l") || direction.equals("L")
-                || direction.equals("left") || direction.equals("LEFT")){
-                centerX=control.getCenterX()-tWidth;
-                centerY=control.getCenterY();
-            }
-                else if(direction.equals("r") || direction.equals("R")
-                || direction.equals("right") || direction.equals("RIGHT")){
-                centerX=control.getCenterX()+tWidth;
-                centerY=control.getCenterY();
-            }
-                else if(direction.equals("u") || direction.equals("U")
-                || direction.equals("up") || direction.equals("UP")){
-                centerX=control.getCenterX();
-                centerY=control.getCenterY()-tHeight;
-            }    
-                else if(direction.equals("d") || direction.equals("D")
-                || direction.equals("down") || direction.equals("DOWN")){
-                centerX=control.getCenterX();
-                centerY=control.getCenterY()+tHeight;
-            }    
-                else
-                System.out.print("Error: check if right direction is assigned!");
-        }*/
-        
-        //Note: the 4 choices in every if statements should be restricted to one, I add them because I would 
-        //like to know what's your guys' prefered parameter as direction
+    public void draw(Graphics g){ //draw the Torpedo
+
         
         g.setColor(new Color(155,0,0));
         g.fillOval(centerX-tWidth/2,centerY-tHeight/2,tWidth,tHeight);
