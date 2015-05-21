@@ -13,6 +13,7 @@ public abstract class Submarine extends JFrameAdded
     private boolean isUnderwater = false;
     private int locationX;
     private int locationY;
+    private int TOR_SPEED;
     public Submarine(boolean isUnder){
         isUnderwater=isUnder;
     }
