@@ -71,7 +71,50 @@ public class SimpleGame extends JPanel
         addKeyListener(new KeyAdapter(){
         
            public void keyPressed(KeyEvent evt){
+               int code=evt.getKeyCode();
+               SimpleTorpedo arrowTorpedo=arrows.getSimpleTorpedo();
+               if(code==KeyEvent.VK_LEFT){
+                  arrows.setDirection("l");
+                  if(!arrowTorpedo.isFiring)
+                  arrowTorpedo.setDirection(arrows.getDirection());
+               }
+               else if (code==KeyEvent.VK_RIGHT){
+                  arrows.setDirection("r");
+                  if(!arrowTorpedo.isFiring)
+                  arrowTorpedo.setDirection(arrows.getDirection());
+               }
+               else if (code==KeyEvent.VK_UP){
+                  arrows.setDirection("u");
+                  if(!arrowTorpedo.isFiring)
+                  arrowTorpedo.setDirection(arrows.getDirection());
+                }
+               else if (code==KeyEvent.VK_DOWN){
+                  arrows.setDirection("d");
+                  if(!arrowTorpedo.isFiring)
+                  arrowTorpedo.setDirection(arrows.getDirection());
+                }
+               else if (code==KeyEvent.VK_ENTER){
+                  arrowTorpedo.setFire(true);
+                }
+               //Note: space is for wasd submarine 
+               else if (code==KeyEvent.VK_SPACE){
+                  wasd.getSimpleTorpedo.setFire(true);
+                }
             }
+            
+           public void keyTyped (KeyEvent evt){
+                char character=evt.getKeyChar();
+                SimpleTorpedo iope=arrows.getSimpleTorpedo();
+                if(character=="W"||character=="w"){
+                }
+                else if(character=="A"||character=="a"){
+                }
+                else if(character=="S"||character=="s"){
+                }
+                else if(character=="D"||character=="d"){
+                }
+            }
+            
         });
         
     }

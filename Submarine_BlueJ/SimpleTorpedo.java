@@ -31,12 +31,19 @@ public class SimpleTorpedo
     }
 
     public static int getTWidth(){return tWidth;}
+
     public static int getTHeight(){return tHeight;}
-    public String getDirection(){return direction;}
+
     public boolean isFiring(){return isFiring;}
-    
+
+    public void setFire(boolean isFire) {isFiring=isFire;}
+
+    public void setDirection(String direct){direction=direct;}
+
+    public void setIsUnderWater(boolean water) {isUnderWater=water;}
+
     public void update(SimpleSubmarine opp){ //if the torpedo is firing, react correspondingly
-        
+
         if(isFiring){
             if(obstacle[centerX][centerY]){ 
                 isFiring=false;
@@ -98,7 +105,7 @@ public class SimpleTorpedo
                 int ix=1;
                 int speedAtGivenTime=0;
                 while(ix<=speedSub&&!obstacle[centerX-tWidth/2][centerY]){
-                  ix++;
+                    ix++;
                 }
                 speedAtGivenTime=ix;
                 finalSpeed=speedAtGivenTime;
@@ -108,7 +115,7 @@ public class SimpleTorpedo
                 int ix=1;
                 int speedAtGivenTime=0;
                 while(ix<=speedSub&&!obstacle[centerX+tWidth/2][centerY]){
-                  ix++;
+                    ix++;
                 }
                 speedAtGivenTime=ix;
                 finalSpeed=speedAtGivenTime;
@@ -118,7 +125,7 @@ public class SimpleTorpedo
                 int ix=1;
                 int speedAtGivenTime=0;
                 while(ix<=speedSub&&!obstacle[centerX][centerY-tHeight/2]){
-                  ix++;
+                    ix++;
                 }
                 speedAtGivenTime=ix;
                 finalSpeed=speedAtGivenTime;
@@ -128,7 +135,7 @@ public class SimpleTorpedo
                 int ix=1;
                 int speedAtGivenTime=0;
                 while(ix<=speedSub&&!obstacle[centerX][centerY+tHeight/2]){
-                  ix++;
+                    ix++;
                 }
                 speedAtGivenTime=ix;
                 finalSpeed=speedAtGivenTime;
@@ -141,7 +148,7 @@ public class SimpleTorpedo
         g.setColor(new Color(155,0,0));
         g.fillOval(centerX-tWidth/2,centerY-tHeight/2,tWidth,tHeight);
         //Make the Torpedo a circle for convenience.
-        
+
         return finalSpeed;
     }
 }

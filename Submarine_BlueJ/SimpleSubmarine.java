@@ -55,6 +55,8 @@ public class SimpleSubmarine
    //mutators
    public void setExploding(boolean ex) {isExploding=ex;}
    public void setFrameNumber(int frame) {explosionFrameNumber=frame;}
+   public void setDirection(String direct){direction=direct;}
+   public void setIsUnderWater(boolean water) {isUnderWater=water;}
    
    //to update the current frame
    public void update(int speedSubmarine){
