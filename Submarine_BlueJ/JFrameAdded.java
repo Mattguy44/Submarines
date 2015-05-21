@@ -35,13 +35,9 @@ public class JFrameAdded extends JFrame
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setTitle("Submarine Game");
         this.setVisible(true);
+        JPanelAdded panel = new JPanelAdded();
+        this.add(panel);
         setBackground(Color.BLUE);
-        try{
-            setIconImage(ImageIO.read(this.getClass().getResource("Sub1.png")));
-        }
-        catch(Exception e1){
-            e1.printStackTrace();
-        }
 
     }
 }
