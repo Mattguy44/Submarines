@@ -8,66 +8,104 @@ dependency2.type=UsesDependency
 dependency3.from=SimpleTorpedo
 dependency3.to=SimpleSubmarine
 dependency3.type=UsesDependency
+dependency4.from=SimpleSubmarine
+dependency4.to=SimpleTorpedo
+dependency4.type=UsesDependency
 objectbench.height=100
+<<<<<<< HEAD
 objectbench.width=977
 package.editor.height=400
 package.editor.width=875
 package.editor.x=498
 package.editor.y=199
 package.numDependencies=3
+=======
+objectbench.width=668
+package.editor.height=400
+package.editor.width=875
+package.editor.x=99
+package.editor.y=114
+package.numDependencies=4
+>>>>>>> e4824e2c4283884de3db68bf31955efb8f05e434
 package.numTargets=7
 package.showExtends=true
 package.showUses=true
 project.charset=UTF-8
 target1.editor.height=700
 target1.editor.width=900
+<<<<<<< HEAD
 target1.editor.x=826
 target1.editor.y=126
+=======
+target1.editor.x=645
+target1.editor.y=59
+>>>>>>> e4824e2c4283884de3db68bf31955efb8f05e434
 target1.height=50
-target1.name=WASD
+target1.name=JFrameAdded
 target1.naviview.expanded=false
 target1.showInterface=false
 target1.type=ClassTarget
 target1.typeParameters=
+<<<<<<< HEAD
 target1.width=80
 target1.x=320
 target1.y=120
+=======
+target1.width=110
+target1.x=70
+target1.y=10
+>>>>>>> e4824e2c4283884de3db68bf31955efb8f05e434
 target2.editor.height=700
-target2.editor.width=900
-target2.editor.x=826
-target2.editor.y=126
+target2.editor.width=1126
+target2.editor.x=241
+target2.editor.y=294
 target2.height=50
-target2.name=ARROWS
+target2.name=WASD
 target2.naviview.expanded=false
 target2.showInterface=false
 target2.type=ClassTarget
 target2.typeParameters=
 target2.width=80
+<<<<<<< HEAD
 target2.x=440
 target2.y=120
 target3.editor.height=700
 target3.editor.width=900
 target3.editor.x=910
 target3.editor.y=82
+=======
+target2.x=300
+target2.y=120
+target3.editor.height=789
+target3.editor.width=1748
+target3.editor.x=33
+target3.editor.y=157
+>>>>>>> e4824e2c4283884de3db68bf31955efb8f05e434
 target3.height=50
-target3.name=SimpleTorpedo
-target3.naviview.expanded=true
+target3.name=Torpedo
+target3.naviview.expanded=false
 target3.showInterface=false
 target3.type=ClassTarget
 target3.typeParameters=
-target3.width=110
-target3.x=70
-target3.y=270
+target3.width=80
+target3.x=350
+target3.y=10
 target4.editor.height=700
 target4.editor.width=900
+<<<<<<< HEAD
 target4.editor.x=263
 target4.editor.y=227
+=======
+target4.editor.x=1113
+target4.editor.y=84
+>>>>>>> e4824e2c4283884de3db68bf31955efb8f05e434
 target4.height=50
-target4.name=Torpedo
-target4.naviview.expanded=false
+target4.name=SimpleTorpedo
+target4.naviview.expanded=true
 target4.showInterface=false
 target4.type=ClassTarget
 target4.typeParameters=
+<<<<<<< HEAD
 target4.width=80
 target4.x=170
 target4.y=120
@@ -78,35 +116,59 @@ target5.editor.y=156
 target5.height=50
 target5.name=Submarine
 target5.naviview.expanded=true
+=======
+target4.width=110
+target4.x=320
+target4.y=200
+target5.editor.height=700
+target5.editor.width=900
+target5.editor.x=0
+target5.editor.y=0
+target5.height=50
+target5.name=Submarine
+>>>>>>> e4824e2c4283884de3db68bf31955efb8f05e434
 target5.showInterface=false
 target5.type=AbstractTarget
 target5.typeParameters=
 target5.width=90
-target5.x=350
+target5.x=190
 target5.y=10
+<<<<<<< HEAD
 target6.editor.height=700
 target6.editor.width=900
 target6.editor.x=0
 target6.editor.y=22
+=======
+target6.editor.height=721
+target6.editor.width=1013
+target6.editor.x=678
+target6.editor.y=58
+>>>>>>> e4824e2c4283884de3db68bf31955efb8f05e434
 target6.height=50
-target6.name=JFrameAdded
+target6.name=SimpleSubmarine
 target6.naviview.expanded=true
 target6.showInterface=false
 target6.type=ClassTarget
 target6.typeParameters=
-target6.width=110
-target6.x=70
-target6.y=10
-target7.editor.height=674
+target6.width=130
+target6.x=40
+target6.y=210
+target7.editor.height=700
 target7.editor.width=900
-target7.editor.x=966
-target7.editor.y=0
+target7.editor.x=826
+target7.editor.y=126
 target7.height=50
-target7.name=SimpleSubmarine
-target7.naviview.expanded=true
+target7.name=ARROWS
+target7.naviview.expanded=false
 target7.showInterface=false
 target7.type=ClassTarget
 target7.typeParameters=
+<<<<<<< HEAD
 target7.width=130
 target7.x=220
 target7.y=250
+=======
+target7.width=80
+target7.x=430
+target7.y=120
+>>>>>>> e4824e2c4283884de3db68bf31955efb8f05e434
