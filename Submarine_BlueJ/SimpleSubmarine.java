@@ -49,8 +49,8 @@ public class SimpleSubmarine
    public String getDirection() {return direction;}
    public boolean [][] getObstacle() {return obstacle;}
    public boolean isUnderWater() {return isUnderWater;}
-   public int getWidth() {return width;}
-   public int getHeight() {return height;}
+   public static int getWidth() {return width;}
+   public static int getHeight() {return height;}
    public SimpleTorpedo getSimpleTorpedo(){return st;}
    //mutators
    public void setExploding(boolean ex) {isExploding=ex;}
