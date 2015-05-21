@@ -31,17 +31,14 @@ public class SimpleTorpedo
     }
 
     public static int getTWidth(){return tWidth;}
-
     public static int getTHeight(){return tHeight;}
-
     public boolean isFiring(){return isFiring;}
-
+    public boolean isUnderWater() {return isUnderWater;}
+    
     public void setFire(boolean isFire) {isFiring=isFire;}
-
     public void setDirection(String direct){direction=direct;}
-
     public void setIsUnderWater(boolean water) {isUnderWater=water;}
-
+    
     public void update(SimpleSubmarine opp){ //if the torpedo is firing, react correspondingly
 
         if(isFiring){
