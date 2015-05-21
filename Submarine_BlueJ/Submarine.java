@@ -11,6 +11,8 @@ public abstract class Submarine extends JFrameAdded
     private int dimmensionsX = 100;
     private int dimmensionsY = 50;
     private boolean isUnderwater = false;
+    private int locationX;
+    private int locationY;
     public Submarine(boolean isUnder){
         isUnderwater=isUnder;
     }
@@ -18,7 +20,7 @@ public abstract class Submarine extends JFrameAdded
         new JFrameAdded();
     }
     public void fire(String direction){
-        new Torpedo(dimmensionsX, isUnderwater);
+        //new Torpedo(dimmensionsX, isUnderwater);
         //new Torpedo(direction, isUnderwater);
     }
     public abstract boolean submerge(); //returns true if successful sumberge, false if failed
