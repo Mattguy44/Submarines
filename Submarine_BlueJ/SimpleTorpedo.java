@@ -14,7 +14,7 @@ public class SimpleTorpedo
     private boolean isFiring;
     private String direction;
     private boolean [][] obstacle; //SimpleSubmarine doesn't count
-    private final int tWidth=6,tHeight=6; //Example
+    private static int tWidth=6,tHeight=6; //Example
     /**
      * Constructor to create a Torpedo with right location, direction, known map, and other states.
      */
@@ -30,6 +30,11 @@ public class SimpleTorpedo
         isFiring=false;
     }
 
+    public static int getTWidth(){return tWidth;}
+    public static int getTHeight(){return tHeight;}
+    public String getDirection(){return direction;}
+    public boolean isFiring(){return isFiring;}
+    
     public void update(SimpleSubmarine opp){ //if the torpedo is firing, react correspondingly
         
         if(isFiring){
@@ -86,7 +91,7 @@ public class SimpleTorpedo
         }
     }
 
-    public int draw(Graphics g,SimpleSubmarine control){ //draw the Torpedo
+    public int draw(Graphics g){ //draw the Torpedo
         int finalSpeed=0;
         if( !isFiring) {
             if(direction.equals("l")){
@@ -97,8 +102,7 @@ public class SimpleTorpedo
                 }
                 speedAtGivenTime=ix;
                 finalSpeed=speedAtGivenTime;
-                centerX=control.getCenterX()-speedAtGivenTime;
-                centerY=control.getCenterY();
+                centerX-=speedAtGivenTime;
             }
             else if(direction.equals("r")){
                 int ix=1;
@@ -108,8 +112,7 @@ public class SimpleTorpedo
                 }
                 speedAtGivenTime=ix;
                 finalSpeed=speedAtGivenTime;
-                centerX=control.getCenterX()+speedAtGivenTime;
-                centerY=control.getCenterY();
+                centerX+=speedAtGivenTime;
             }
             else if(direction.equals("u")){
                 int ix=1;
@@ -119,8 +122,7 @@ public class SimpleTorpedo
                 }
                 speedAtGivenTime=ix;
                 finalSpeed=speedAtGivenTime;
-                centerX=control.getCenterX();
-                centerY=control.getCenterY()-speedAtGivenTime;
+                centerY-=speedAtGivenTime;
             }    
             else if(direction.equals("d")){
                 int ix=1;
@@ -130,8 +132,7 @@ public class SimpleTorpedo
                 }
                 speedAtGivenTime=ix;
                 finalSpeed=speedAtGivenTime;
-                centerX=control.getCenterX();
-                centerY=control.getCenterY()+speedAtGivenTime;
+                centerY+=speedAtGivenTime;
             }    
             else
                 System.out.print("Error: check if right direction is assigned!");

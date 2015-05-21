@@ -14,18 +14,32 @@ public class SimpleSubmarine
    private boolean isExploding;
    private String direction;  
    private boolean [][] obstacle;
-   private final int width=10,height=10;
+   private static int width=12,height=12;
    private int explosionFrameNumber;  
-   
+   private SimpleTorpedo st;
    //Constructor
-   public SimpleSubmarine(boolean [][] o,String dir,int x,int y,int s,boolean uw){
+   public SimpleSubmarine(boolean [][] o,String dir,int x,int y,int magVelocity,int torSpeed, boolean uw){
      obstacle=o;
      direction=dir;
      centerX=x;
      centerY=y;
-     speed = s;
+     speed = magVelocity;
      isUnderWater = uw;
      isExploding=false;
+     int centerTorpedoX=centerX, centerTorpedoY=centerY;
+      if(direction.equals ("l")){
+        centerTorpedoX=centerTorpedoX-width/2-SimpleTorpedo.getTWidth()/2;
+       }
+      else if (direction.equals("r")){
+        centerTorpedoX=centerTorpedoX+width/2+SimpleTorpedo.getTWidth()/2;
+        }
+      else if(direction.equals ("u")){
+        centerTorpedoY=centerTorpedoY-height/2-SimpleTorpedo.getTHeight()/2;
+       }
+       else if(direction.equals ("d")){
+        centerTorpedoY=centerTorpedoY+height/2+SimpleTorpedo.getTHeight()/2;
+       }
+      st=new SimpleTorpedo(o,dir,centerTorpedoX,centerTorpedoY,torSpeed,speed,uw);
    }
    
    //accessors
@@ -37,7 +51,7 @@ public class SimpleSubmarine
    public boolean isUnderWater() {return isUnderWater;}
    public int getWidth() {return width;}
    public int getHeight() {return height;}
-   
+   public SimpleTorpedo getSimpleTorpedo(){return st;}
    //mutators
    public void setExploding(boolean ex) {isExploding=ex;}
    public void setFrameNumber(int frame) {explosionFrameNumber=frame;}
