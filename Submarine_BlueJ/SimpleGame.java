@@ -162,10 +162,12 @@ public class SimpleGame extends JPanel
      if(arrows==null || wasd==null){
       widthPanel=getWidth();
       heightPanel=getHeight();
+      int speedOfSubmarine=(int)(Math.random()*50)+50;
+      int speedOfTorpedo=(int)(Math.random()*200)+150;
       arrows=new SimpleSubmarine(obstacles,"r",0,heightPanel-1-SimpleSubmarine.getWidth(),
-      (int)(Math.random()*50)+50,(int)(Math.random()*200)+150,true);
+      speedOfSubmarine,speedOfTorpedo,true);
       wasd=new SimpleSubmarine(obstacles,"l",widthPanel-1-SimpleSubmarine.getHeight(),0,
-      (int)(Math.random()*50)+50,(int)(Math.random()*200)+150,true);
+      speedOfSubmarine,speedOfTorpedo,true);
      }
     }
 }
