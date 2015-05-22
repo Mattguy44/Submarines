@@ -18,6 +18,7 @@ public class SimpleTorpedo
     /**
      * Constructor to create a Torpedo with right location, direction, known map, and other states.
      */
+
     public SimpleTorpedo(boolean [][] o,String dir,int x,int y,int st,int ss, boolean uw)
     {
         obstacle=o;
