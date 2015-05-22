@@ -31,7 +31,7 @@ public class Torpedo
     
     public void update(Submarine opp){ //if the torpedo is firing, react correspondingly
             if(obstacle[centerX][centerY]){ 
-                Torpedo this=null;
+                //Torpedo this=null;
             }
             /*else if(Math.abs(opp.getCenterX-centerX)<= opp.getWidth()/2.
             &&      Math.abs(opp.getCenterX-centerY)<= opp.getHeight()/2.){
