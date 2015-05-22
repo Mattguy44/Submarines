@@ -23,15 +23,19 @@ public class WASD extends Submarine
         int key = e.getKeyCode();
         if (key == KeyEvent.VK_A) {
             x = -25;
+            repaint();
         }
         if (key == KeyEvent.VK_D) {
             x = 25;
+            repaint();
         }
         if (key == KeyEvent.VK_W) {
             y = -25;
+            repaint();
         }
         if (key == KeyEvent.VK_S) {
             y = 25;
+            repaint();
         }
     }
     public void keyReleased(KeyEvent e){
