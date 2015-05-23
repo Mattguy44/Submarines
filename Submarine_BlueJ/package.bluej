@@ -18,6 +18,7 @@ dependency6.from=SimpleGame
 dependency6.to=SimpleTorpedo
 dependency6.type=UsesDependency
 <<<<<<< HEAD
+<<<<<<< HEAD
 dependency7.from=Submarine
 dependency7.to=Torpedo
 dependency7.type=UsesDependency
@@ -34,6 +35,8 @@ package.numDependencies=8
 package.numTargets=9
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> b2f16c067e5cfc38f7e93c47388a75f3127ca6eb
 dependency7.from=Play
 dependency7.to=Submarine
 dependency7.type=UsesDependency
@@ -45,22 +48,20 @@ dependency9.to=WASD
 dependency9.type=UsesDependency
 objectbench.height=100
 objectbench.width=977
-=======
-objectbench.height=100
-objectbench.width=672
->>>>>>> 9cc2ba4b00374e453430fcc07891e239b8087c1d
 package.editor.height=400
 package.editor.width=875
 package.editor.x=99
 package.editor.y=114
-<<<<<<< HEAD
 package.numDependencies=9
 package.numTargets=10
+<<<<<<< HEAD
 =======
 package.numDependencies=6
 package.numTargets=8
 >>>>>>> 9cc2ba4b00374e453430fcc07891e239b8087c1d
 >>>>>>> e8da1e6dfe7153be493e5775eed23bcbdd1423b9
+=======
+>>>>>>> b2f16c067e5cfc38f7e93c47388a75f3127ca6eb
 package.showExtends=true
 package.showUses=true
 project.charset=UTF-8
@@ -76,10 +77,15 @@ target1.type=ClassTarget
 target1.typeParameters=
 target1.width=80
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 target1.x=350
 target1.y=140
+=======
+target1.x=450
+target1.y=180
+>>>>>>> b2f16c067e5cfc38f7e93c47388a75f3127ca6eb
 target10.editor.height=721
 target10.editor.width=1013
 target10.editor.x=678
@@ -99,6 +105,7 @@ target2.editor.x=139
 target2.editor.y=134
 target2.height=50
 target2.name=Model_JFrame
+<<<<<<< HEAD
 =======
 >>>>>>> e8da1e6dfe7153be493e5775eed23bcbdd1423b9
 target1.x=300
@@ -113,10 +120,13 @@ target2.name=ARROWS
 =======
 >>>>>>> 9cc2ba4b00374e453430fcc07891e239b8087c1d
 >>>>>>> e8da1e6dfe7153be493e5775eed23bcbdd1423b9
+=======
+>>>>>>> b2f16c067e5cfc38f7e93c47388a75f3127ca6eb
 target2.naviview.expanded=false
 target2.showInterface=false
 target2.type=ClassTarget
 target2.typeParameters=
+<<<<<<< HEAD
 <<<<<<< HEAD
 target2.width=80
 target2.x=430
@@ -128,9 +138,11 @@ target3.type=ClassTarget
 target3.typeParameters=
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> b2f16c067e5cfc38f7e93c47388a75f3127ca6eb
 target2.width=110
-target2.x=640
-target2.y=260
+target2.x=70
+target2.y=70
 target3.editor.height=700
 target3.editor.width=900
 target3.editor.x=826
@@ -142,6 +154,7 @@ target3.showInterface=false
 target3.type=ClassTarget
 target3.typeParameters=
 target3.width=80
+<<<<<<< HEAD
 target3.x=480
 target3.y=140
 =======
@@ -157,6 +170,10 @@ target3.typeParameters=
 target3.width=100
 target3.x=70
 target3.y=70
+=======
+target3.x=590
+target3.y=200
+>>>>>>> b2f16c067e5cfc38f7e93c47388a75f3127ca6eb
 target4.editor.height=700
 target4.editor.width=900
 <<<<<<< HEAD
@@ -165,13 +182,17 @@ target4.editor.y=45
 =======
 target4.editor.x=1020
 target4.editor.y=84
+<<<<<<< HEAD
 >>>>>>> 9cc2ba4b00374e453430fcc07891e239b8087c1d
 >>>>>>> e8da1e6dfe7153be493e5775eed23bcbdd1423b9
+=======
+>>>>>>> b2f16c067e5cfc38f7e93c47388a75f3127ca6eb
 target4.height=50
 target4.name=SimpleGame
 target4.showInterface=false
 target4.type=ClassTarget
 target4.typeParameters=
+<<<<<<< HEAD
 <<<<<<< HEAD
 target4.width=110
 =======
@@ -179,12 +200,18 @@ target4.width=110
 target4.width=100
 target4.x=70
 target4.y=70
+=======
+target4.width=120
+target4.x=200
+target4.y=300
+>>>>>>> b2f16c067e5cfc38f7e93c47388a75f3127ca6eb
 target5.editor.height=700
 target5.editor.width=900
-target5.editor.x=291
-target5.editor.y=287
+target5.editor.x=161
+target5.editor.y=87
 target5.height=50
 target5.name=Play
+<<<<<<< HEAD
 =======
 target4.width=120
 >>>>>>> e8da1e6dfe7153be493e5775eed23bcbdd1423b9
@@ -201,10 +228,14 @@ target5.naviview.expanded=false
 =======
 >>>>>>> 9cc2ba4b00374e453430fcc07891e239b8087c1d
 >>>>>>> e8da1e6dfe7153be493e5775eed23bcbdd1423b9
+=======
+target5.naviview.expanded=false
+>>>>>>> b2f16c067e5cfc38f7e93c47388a75f3127ca6eb
 target5.showInterface=false
 target5.type=ClassTarget
 target5.typeParameters=
 target5.width=80
+<<<<<<< HEAD
 <<<<<<< HEAD
 target5.x=350
 target5.y=10
@@ -229,28 +260,38 @@ target6.naviview.expanded=true
 =======
 target5.x=350
 target5.y=10
+=======
+target5.x=660
+target5.y=60
+>>>>>>> b2f16c067e5cfc38f7e93c47388a75f3127ca6eb
 target6.editor.height=700
 target6.editor.width=900
 target6.editor.x=0
-target6.editor.y=22
+target6.editor.y=1
 target6.height=50
-target6.name=Submarine
->>>>>>> 9cc2ba4b00374e453430fcc07891e239b8087c1d
+target6.name=SimpleTorpedo
 target6.showInterface=false
-target6.type=AbstractTarget
+target6.type=ClassTarget
 target6.typeParameters=
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
 target6.width=110
 target6.x=320
 target6.y=200
+=======
+target6.width=120
+target6.x=10
+target6.y=130
+>>>>>>> b2f16c067e5cfc38f7e93c47388a75f3127ca6eb
 target7.editor.height=789
 target7.editor.width=1748
 target7.editor.x=33
 target7.editor.y=157
 target7.height=50
 target7.name=Torpedo
+<<<<<<< HEAD
 =======
 >>>>>>> e8da1e6dfe7153be493e5775eed23bcbdd1423b9
 target6.width=90
@@ -302,14 +343,15 @@ target7.editor.y=59
 target7.height=50
 target7.name=JFrameAdded
 >>>>>>> 9cc2ba4b00374e453430fcc07891e239b8087c1d
+=======
+>>>>>>> b2f16c067e5cfc38f7e93c47388a75f3127ca6eb
 target7.naviview.expanded=false
 target7.showInterface=false
 target7.type=ClassTarget
 target7.typeParameters=
-<<<<<<< HEAD
 target7.width=80
-target7.x=240
-target7.y=110
+target7.x=280
+target7.y=100
 target8.editor.height=700
 target8.editor.width=900
 target8.editor.x=0
@@ -321,7 +363,7 @@ target8.showInterface=false
 target8.type=AbstractTarget
 target8.typeParameters=
 target8.width=90
-target8.x=410
+target8.x=500
 target8.y=10
 target9.editor.height=700
 target9.editor.width=900
@@ -336,6 +378,7 @@ target9.typeParameters=
 target9.width=110
 target9.x=70
 target9.y=10
+<<<<<<< HEAD
 =======
 target7.width=110
 target7.x=70
@@ -355,3 +398,5 @@ target8.x=40
 target8.y=210
 >>>>>>> 9cc2ba4b00374e453430fcc07891e239b8087c1d
 >>>>>>> e8da1e6dfe7153be493e5775eed23bcbdd1423b9
+=======
+>>>>>>> b2f16c067e5cfc38f7e93c47388a75f3127ca6eb

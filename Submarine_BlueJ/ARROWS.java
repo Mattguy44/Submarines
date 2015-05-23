@@ -23,15 +23,19 @@ public class ARROWS extends Submarine
         int key = e.getKeyCode();
         if (key == KeyEvent.VK_LEFT) {
             x = -25;
+            repaint();
         }
         if (key == KeyEvent.VK_RIGHT) {
             x = 25;
+            repaint();
         }
         if (key == KeyEvent.VK_UP) {
             y = -25;
+            repaint();
         }
         if (key == KeyEvent.VK_DOWN) {
             y = 25;
+            repaint();
         }
     }
     public void keyReleased(KeyEvent e){

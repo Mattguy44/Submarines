@@ -30,6 +30,7 @@ public class JFrameAdded extends JFrame
     public JFrameAdded()
     //added a JFrame for use later but no real use yet
     {
+<<<<<<< HEAD
         //this.setSize(650,650);
         this.setLocation(200,0);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -40,6 +41,23 @@ public class JFrameAdded extends JFrame
         setBackground(Color.BLUE);
         this.pack();
         this.setVisible(true);
+=======
+        JPanel p = new JPanel();
+        p.setBackground(Color.BLUE);
+        this.setSize(500,500);
+        this.setLocation(100,100);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setTitle("Submarine Game");
+        this.add(p);
+        setBackground(Color.BLUE);
+        this.setVisible(true);
+        try{
+            setIconImage(ImageIO.read(this.getClass().getResource("Sub1.png")));
+        }
+        catch(Exception e1){
+            e1.printStackTrace();
+        }
+>>>>>>> b2f16c067e5cfc38f7e93c47388a75f3127ca6eb
 
     }
 }
