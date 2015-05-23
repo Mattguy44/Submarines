@@ -30,14 +30,16 @@ public class JFrameAdded extends JFrame
     public JFrameAdded()
     //added a JFrame for use later but no real use yet
     {
-        this.setSize(500,500);
-        this.setLocation(100,100);
+        //this.setSize(650,650);
+        this.setLocation(200,0);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setTitle("Submarine Game");
-        this.setVisible(true);
+        
         JPanelAdded panel = new JPanelAdded();
         this.add(panel);
         setBackground(Color.BLUE);
+        this.pack();
+        this.setVisible(true);
 
     }
 }
