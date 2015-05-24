@@ -14,7 +14,7 @@ public class SimpleSubmarine
    private boolean isExploding;
    private String direction;  
    private boolean [][] obstacle;
-   private static int width=12,height=12;
+   private static int width=48,height=48;
    private int explosionFrameNumber;  
    private SimpleTorpedo st;
    //Constructor
@@ -77,7 +77,10 @@ public class SimpleSubmarine
    }
    
    public void draw(Graphics g){
-    g.setColor(Color.cyan);
+    if(isUnderWater) 
+        g.setColor(Color.green);
+        else
+        g.setColor(Color.black);
     g.fillRect(centerX-width/2,centerY-height/2,width,height);
     if(isExploding){
     g.setColor(Color.yellow);

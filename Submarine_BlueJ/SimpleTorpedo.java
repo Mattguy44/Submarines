@@ -14,7 +14,7 @@ public class SimpleTorpedo
     private boolean isFiring;
     private String direction;
     private boolean [][] obstacle; //SimpleSubmarine doesn't count
-    private static int tWidth=6,tHeight=6; //Example
+    private static int tWidth=24,tHeight=24; //Example
     /**
      * Constructor to create a Torpedo with right location, direction, known map, and other states.
      */
@@ -45,6 +45,8 @@ public class SimpleTorpedo
         if(isFiring){
             if(obstacle[centerX][centerY]){ 
                 isFiring=false;
+                if(centerX%2==1&&isUnderWater||centerX%2==0&&!isUnderWater) 
+                obstacle[centerX][centerY]=false;
             }
             else if( this.isUnderWater==opp.isUnderWater()
             &&      Math.abs(opp.getCenterX()-centerX)<= opp.getWidth()/2.
@@ -150,8 +152,12 @@ public class SimpleTorpedo
             else
                 System.out.print("Error: check if right direction is assigned!");
         }
+        
+        if(isUnderWater) 
+        g.setColor(Color.green);
+        else
+        g.setColor(Color.black);
 
-        g.setColor(new Color(155,0,0));
         g.fillOval(centerX-tWidth/2,centerY-tHeight/2,tWidth,tHeight);
         //Make the Torpedo a circle for convenience.
 

@@ -38,7 +38,7 @@ public class SimpleGame extends JPanel
      */
     public SimpleGame()
     {
-        obstacles=new boolean [getWidth()][getHeight()];
+        obstacles=new boolean [500][500];
         
         
         for(int r=SimpleSubmarine.getWidth()+SimpleTorpedo.getTWidth();
@@ -156,11 +156,15 @@ public class SimpleGame extends JPanel
 
     public void paintComponent(Graphics g){
 
+         
+        
         
      super.paintComponent(g);
      
      Graphics2D g2=(Graphics2D)g;
      g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+     
+     setBackground(Color.CYAN);
      
      for(int r=SimpleSubmarine.getWidth()+SimpleTorpedo.getTWidth();
         r<obstacles.length-SimpleSubmarine.getWidth()-SimpleTorpedo.getTWidth();r++)
@@ -180,19 +184,19 @@ public class SimpleGame extends JPanel
       heightPanel=getHeight();
       int speedOfSubmarine=(int)(Math.random()*50)+50;
       int speedOfTorpedo=(int)(Math.random()*200)+150;
-      arrows=new SimpleSubmarine(obstacles,"r",0,heightPanel-1-SimpleSubmarine.getWidth(),
+      arrows=new SimpleSubmarine(obstacles,"r",SimpleSubmarine.getHeight()/2+1,heightPanel-1-SimpleSubmarine.getWidth()/2,
       speedOfSubmarine,speedOfTorpedo,true);
-      wasd=new SimpleSubmarine(obstacles,"l",widthPanel-1-SimpleSubmarine.getHeight(),0,
+      wasd=new SimpleSubmarine(obstacles,"l",widthPanel-1-SimpleSubmarine.getHeight()/2,SimpleSubmarine.getWidth()/2+1,
       speedOfSubmarine,speedOfTorpedo,false);
     }
     
-    if(hasFocus())
+   if(hasFocus())
        g.setColor(Color.BLACK);
     else{
      g.setColor(Color.CYAN);
      g.drawString("Click to activate",100,20);
      //g.setColor(Color.gray);
-    }
+    }   
     
     arrows.draw(g);
     wasd.draw(g);
