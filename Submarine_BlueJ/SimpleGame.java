@@ -38,13 +38,15 @@ public class SimpleGame extends JPanel
      */
     public SimpleGame()
     {
-        obstacles=new boolean [widthPanel][heightPanel];
+        obstacles=new boolean [getWidth()][getHeight()];
+        
         
         for(int r=SimpleSubmarine.getWidth()+SimpleTorpedo.getTWidth();
         r<obstacles.length-SimpleSubmarine.getWidth()-SimpleTorpedo.getTWidth();r++)
         for(int c=0;c<obstacles[0].length;c++){
-        obstacles[r][c]=(Math.random()<0.3);
+        obstacles[r][c]=(Math.random()<0.5);
         }
+        
         
         
         
@@ -154,18 +156,45 @@ public class SimpleGame extends JPanel
 
     public void paintComponent(Graphics g){
 
+        
      super.paintComponent(g);
      
      Graphics2D g2=(Graphics2D)g;
      g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
      
+     for(int r=SimpleSubmarine.getWidth()+SimpleTorpedo.getTWidth();
+        r<obstacles.length-SimpleSubmarine.getWidth()-SimpleTorpedo.getTWidth();r++)
+        for(int c=0;c<obstacles[0].length;c++){
+        if(obstacles[r][c]&&r%2==1) {
+            g.setColor(Color.green);
+            g.fillRect(r,c,1,1);
+        }
+        else if(obstacles[r][c]) {
+            g.setColor(Color.black);
+            g.fillRect(r,c,1,1);
+        }
+        }
+        
      if(arrows==null || wasd==null){
       widthPanel=getWidth();
       heightPanel=getHeight();
+      int speedOfSubmarine=(int)(Math.random()*50)+50;
+      int speedOfTorpedo=(int)(Math.random()*200)+150;
       arrows=new SimpleSubmarine(obstacles,"r",0,heightPanel-1-SimpleSubmarine.getWidth(),
-      (int)(Math.random()*50)+50,(int)(Math.random()*200)+150,true);
+      speedOfSubmarine,speedOfTorpedo,true);
       wasd=new SimpleSubmarine(obstacles,"l",widthPanel-1-SimpleSubmarine.getHeight(),0,
-      (int)(Math.random()*50)+50,(int)(Math.random()*200)+150,true);
-     }
+      speedOfSubmarine,speedOfTorpedo,false);
+    }
+    
+    if(hasFocus())
+       g.setColor(Color.BLACK);
+    else{
+     g.setColor(Color.CYAN);
+     g.drawString("Click to activate",100,20);
+     //g.setColor(Color.gray);
+    }
+    
+    arrows.draw(g);
+    wasd.draw(g);
     }
 }

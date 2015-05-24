@@ -18,6 +18,7 @@ public class SimpleTorpedo
     /**
      * Constructor to create a Torpedo with right location, direction, known map, and other states.
      */
+
     public SimpleTorpedo(boolean [][] o,String dir,int x,int y,int st,int ss, boolean uw)
     {
         obstacle=o;
@@ -54,36 +55,40 @@ public class SimpleTorpedo
             }
             else{
                 if(direction.equals ("l")){
-                    int ix=1;
+                    int ix=0;
                     int speedAtGivenTime=0;
-                    while(ix<=speedTor&&!obstacle[centerX-tWidth/2][centerY]){
+                    while(centerX-tWidth/2>=0&&
+                    (ix<speedTor&&!obstacle[centerX-tWidth/2][centerY])){
                         ix++;
                     }
                     speedAtGivenTime=ix;
                     centerX-=speedAtGivenTime;
                 }
                 else if(direction.equals("r")){
-                    int ix=1;
+                    int ix=0;
                     int speedAtGivenTime=0;
-                    while(ix<=speedTor&&!obstacle[centerX+tWidth/2][centerY]){
+                    while(centerX+tWidth/2<obstacle.length&&
+                    (ix<speedTor&&!obstacle[centerX+tWidth/2][centerY])){
                         ix++;
                     }
                     speedAtGivenTime=ix;
                     centerX+=speedAtGivenTime;
                 }
                 else if(direction.equals("u")){
-                    int ix=1;
+                    int ix=0;
                     int speedAtGivenTime=0;
-                    while(ix<=speedTor&&!obstacle[centerX][centerY-tHeight/2]){
+                    while(centerY-tHeight/2>=0&&
+                    (ix<speedTor&&!obstacle[centerX][centerY-tHeight/2])){
                         ix++;
                     }
                     speedAtGivenTime=ix;
                     centerY-=speedAtGivenTime;
                 }
                 else if(direction.equals("d")){
-                    int ix=1;
+                    int ix=0;
                     int speedAtGivenTime=0;
-                    while(ix<=speedTor&&!obstacle[centerX][centerY+tHeight/2]){
+                    while(centerY+tHeight/2<obstacle[0].length&&
+                    (ix<speedTor&&!obstacle[centerX][centerY+tHeight/2])){
                         ix++;
                     }
                     speedAtGivenTime=ix;
@@ -99,9 +104,10 @@ public class SimpleTorpedo
         int finalSpeed=0;
         if( !isFiring) {
             if(direction.equals("l")){
-                int ix=1;
+                int ix=0;
                 int speedAtGivenTime=0;
-                while(ix<=speedSub&&!obstacle[centerX-tWidth/2][centerY]){
+                while(centerX-tWidth/2>=0&&
+                (ix<speedSub&&!obstacle[centerX-tWidth/2][centerY])){
                     ix++;
                 }
                 speedAtGivenTime=ix;
@@ -109,9 +115,10 @@ public class SimpleTorpedo
                 centerX-=speedAtGivenTime;
             }
             else if(direction.equals("r")){
-                int ix=1;
+                int ix=0;
                 int speedAtGivenTime=0;
-                while(ix<=speedSub&&!obstacle[centerX+tWidth/2][centerY]){
+                while(centerX+tWidth/2<obstacle.length&&
+                (ix<speedSub&&!obstacle[centerX+tWidth/2][centerY])){
                     ix++;
                 }
                 speedAtGivenTime=ix;
@@ -119,9 +126,10 @@ public class SimpleTorpedo
                 centerX+=speedAtGivenTime;
             }
             else if(direction.equals("u")){
-                int ix=1;
+                int ix=0;
                 int speedAtGivenTime=0;
-                while(ix<=speedSub&&!obstacle[centerX][centerY-tHeight/2]){
+                while(centerY-tHeight/2>=0&&
+                (ix<speedSub&&!obstacle[centerX][centerY-tHeight/2])){
                     ix++;
                 }
                 speedAtGivenTime=ix;
@@ -129,9 +137,10 @@ public class SimpleTorpedo
                 centerY-=speedAtGivenTime;
             }    
             else if(direction.equals("d")){
-                int ix=1;
+                int ix=0;
                 int speedAtGivenTime=0;
-                while(ix<=speedSub&&!obstacle[centerX][centerY+tHeight/2]){
+                while(centerY+tHeight/2<obstacle[0].length&&
+                (ix<speedSub&&!obstacle[centerX][centerY+tHeight/2])){
                     ix++;
                 }
                 speedAtGivenTime=ix;
