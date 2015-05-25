@@ -9,12 +9,13 @@ public class SimpleSubmarine
 {
    //instance variables
    private int speed;
+   private int torSpeed;
    private boolean isUnderWater;
    private int centerX,centerY;
    private boolean isExploding;
    private String direction;  
    private boolean [][] obstacle;
-   private static int width=12,height=12;
+   private static int width=48,height=48;
    private int explosionFrameNumber;  
    private SimpleTorpedo st;
    //Constructor
@@ -23,6 +24,7 @@ public class SimpleSubmarine
      direction=dir;
      centerX=x;
      centerY=y;
+     this.torSpeed=torSpeed;
      speed = magVelocity;
      isUnderWater = uw;
      isExploding=false;
@@ -57,9 +59,27 @@ public class SimpleSubmarine
    public void setFrameNumber(int frame) {explosionFrameNumber=frame;}
    public void setDirection(String direct){direction=direct;}
    public void setIsUnderWater(boolean water) {isUnderWater=water;}
+   public void getNewSimpleTorpedo()
+   {
+       int centerTorpedoX=centerX, centerTorpedoY=centerY;
+      if(direction.equals ("l")){
+        centerTorpedoX=centerTorpedoX-width/2-SimpleTorpedo.getTWidth()/2;
+       }
+      else if (direction.equals("r")){
+        centerTorpedoX=centerTorpedoX+width/2+SimpleTorpedo.getTWidth()/2;
+        }
+      else if(direction.equals ("u")){
+        centerTorpedoY=centerTorpedoY-height/2-SimpleTorpedo.getTHeight()/2;
+       }
+       else if(direction.equals ("d")){
+        centerTorpedoY=centerTorpedoY+height/2+SimpleTorpedo.getTHeight()/2;
+       }
+      st=new SimpleTorpedo(obstacle,direction,centerTorpedoX,centerTorpedoY,torSpeed,speed,isUnderWater);
+   }
+
    
    //to update the current frame
-   public void update(int speedSubmarine){
+   public void update(){
     if(isExploding) {
         explosionFrameNumber++;
         if (explosionFrameNumber == 20) {
@@ -67,17 +87,48 @@ public class SimpleSubmarine
         }
     }
     else {
-         if(direction.equals ("l")){centerX-=speedSubmarine;}
-         else if(direction.equals("r")) {centerX+=speedSubmarine;}
-         else if(direction.equals("u")) {centerY-=speedSubmarine;}
-         else if(direction.equals("d")) {centerY+=speedSubmarine;}
+         if(direction.equals ("l")){
+              int ix=0;
+                while(centerX-width/2-ix-1>=0&&
+                (ix<speed&&!obstacle[centerX-width/2][centerY])){
+                    ix++;
+                }
+                centerX-=ix;}
+        
+         else if(direction.equals("r")) {
+             int ix=0;
+                while(centerX+width/2+ix+1<obstacle.length&&
+                (ix<speed&&!obstacle[centerX+width/2][centerY])){
+                    ix++;
+                }
+               centerX+=ix;
+            }
+         else if(direction.equals("u")) {
+              int ix=0;
+                while(centerY-height/2-ix-1>=0&&
+                (ix<speed&&!obstacle[centerX][centerY-height/2])){
+                    ix++;
+                }
+                centerY-=ix;
+            }
+         else if(direction.equals("d")) {
+             int ix=0;
+                while(centerY+height/2+ix+1<obstacle.length&&
+                (ix<speed&&!obstacle[centerX][centerY+height/2])){
+                    ix++;
+                }
+                centerY+=ix;
+            }
          else
          System.out.print("Error: check if right direction is assigned!");
-    }
-   }
+    }}
+   
    
    public void draw(Graphics g){
-    g.setColor(Color.cyan);
+    if(isUnderWater) 
+        g.setColor(Color.green);
+        else
+        g.setColor(Color.black);
     g.fillRect(centerX-width/2,centerY-height/2,width,height);
     if(isExploding){
     g.setColor(Color.yellow);
