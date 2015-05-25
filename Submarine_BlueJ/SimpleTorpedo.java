@@ -49,9 +49,9 @@ public class SimpleTorpedo
             }
             else{
                 if(direction.equals ("l")){
-                    int ix=0;
+                    int ix=-0;
                     int speedAtGivenTime=0;
-                    while(centerX-tWidth/2>=0&&
+                    while(centerX-tWidth/2-ix-1>=0&&
                     (ix<speedTor&&!obstacle[centerX-tWidth/2][centerY])){
                         ix++;
                     }
@@ -61,7 +61,7 @@ public class SimpleTorpedo
                 else if(direction.equals("r")){
                     int ix=0;
                     int speedAtGivenTime=0;
-                    while(centerX+tWidth/2<obstacle.length&&
+                    while(centerX+tWidth/2+ix+1<obstacle.length&&
                     (ix<speedTor&&!obstacle[centerX+tWidth/2][centerY])){
                         ix++;
                     }
@@ -69,9 +69,9 @@ public class SimpleTorpedo
                     centerX+=speedAtGivenTime;
                 }
                 else if(direction.equals("u")){
-                    int ix=0;
+                    int ix=-0;
                     int speedAtGivenTime=0;
-                    while(centerY-tHeight/2>=0&&
+                    while(centerY-tHeight/2-ix-1>=0&&
                     (ix<speedTor&&!obstacle[centerX][centerY-tHeight/2])){
                         ix++;
                     }
@@ -81,7 +81,7 @@ public class SimpleTorpedo
                 else if(direction.equals("d")){
                     int ix=0;
                     int speedAtGivenTime=0;
-                    while(centerY+tHeight/2<obstacle[0].length&&
+                    while(centerY+tHeight/2+ix+1<obstacle[0].length&&
                     (ix<speedTor&&!obstacle[centerX][centerY+tHeight/2])){
                         ix++;
                     }

@@ -54,7 +54,10 @@ public class SimpleGame extends JPanel
         
         ActionListener action=new ActionListener() {
           public void actionPerformed(ActionEvent evt){
-         
+            if(arrows.getSimpleTorpedo()!=null)
+            arrows.getSimpleTorpedo().update(wasd);
+            if(wasd.getSimpleTorpedo()!=null)
+            wasd.getSimpleTorpedo().update(arrows);
             repaint();
           }
         };
@@ -81,7 +84,6 @@ public class SimpleGame extends JPanel
         
            public void keyPressed(KeyEvent evt){
                int code=evt.getKeyCode();
-               SimpleTorpedo arrowTorpedo=arrows.getSimpleTorpedo();
                
                //Note:for arrows, left right up down arrows are directions, enter is fire
                //and shift is change the state of above or below water.
@@ -169,8 +171,8 @@ public class SimpleGame extends JPanel
      if(arrows==null || wasd==null){
       widthPanel=getWidth();
       heightPanel=getHeight();
-      int speedOfSubmarine=(int)(Math.random()*50)+50;
-      int speedOfTorpedo=(int)(Math.random()*200)+150;
+      int speedOfSubmarine=(int)(Math.random()*50)+20;
+      int speedOfTorpedo=(int)(Math.random()*20)+15;
       arrows=new SimpleSubmarine(obstacles,"r",SimpleSubmarine.getHeight()/2+1,heightPanel-1-SimpleSubmarine.getWidth()/2,
       speedOfSubmarine,speedOfTorpedo,true);
       wasd=new SimpleSubmarine(obstacles,"l",widthPanel-1-SimpleSubmarine.getHeight()/2,SimpleSubmarine.getWidth()/2+1,

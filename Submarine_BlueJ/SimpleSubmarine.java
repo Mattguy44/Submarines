@@ -29,7 +29,7 @@ public class SimpleSubmarine
      isUnderWater = uw;
      isExploding=false;
      int centerTorpedoX=centerX, centerTorpedoY=centerY;
-      if(direction.equals ("l")){
+      /*if(direction.equals ("l")){
         centerTorpedoX=centerTorpedoX-width/2-SimpleTorpedo.getTWidth()/2;
        }
       else if (direction.equals("r")){
@@ -40,8 +40,8 @@ public class SimpleSubmarine
        }
        else if(direction.equals ("d")){
         centerTorpedoY=centerTorpedoY+height/2+SimpleTorpedo.getTHeight()/2;
-       }
-      st=new SimpleTorpedo(o,dir,centerTorpedoX,centerTorpedoY,torSpeed,speed,uw);
+       }*/
+      st=null;
    }
    
    //accessors
@@ -62,7 +62,7 @@ public class SimpleSubmarine
    public void getNewSimpleTorpedo()
    {
        int centerTorpedoX=centerX, centerTorpedoY=centerY;
-      if(direction.equals ("l")){
+      /*if(direction.equals ("l")){
         centerTorpedoX=centerTorpedoX-width/2-SimpleTorpedo.getTWidth()/2;
        }
       else if (direction.equals("r")){
@@ -73,7 +73,7 @@ public class SimpleSubmarine
        }
        else if(direction.equals ("d")){
         centerTorpedoY=centerTorpedoY+height/2+SimpleTorpedo.getTHeight()/2;
-       }
+       }*/
       st=new SimpleTorpedo(obstacle,direction,centerTorpedoX,centerTorpedoY,torSpeed,speed,isUnderWater);
    }
 
@@ -121,7 +121,8 @@ public class SimpleSubmarine
             }
          else
          System.out.print("Error: check if right direction is assigned!");
-    }}
+    }
+}
    
    
    public void draw(Graphics g){
@@ -146,5 +147,8 @@ public class SimpleSubmarine
     2*explosionFrameNumber
     );
     }
+    
+    if(st!=null)
+    st.draw(g);
     }
 }
