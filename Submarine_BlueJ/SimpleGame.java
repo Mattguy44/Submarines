@@ -41,10 +41,10 @@ public class SimpleGame extends JPanel
         obstacles=new boolean [500][500];
         
         
-        for(int r=SimpleSubmarine.getWidth()+SimpleTorpedo.getTWidth();
-        r<obstacles.length-SimpleSubmarine.getWidth()-SimpleTorpedo.getTWidth();r++)
-        for(int c=0;c<obstacles[0].length;c++){
-        obstacles[r][c]=(Math.random()<0.5);
+        for(int r=SimpleSubmarine.getWidth()+SimpleTorpedo.getTWidth()+20;
+        r<obstacles.length-SimpleSubmarine.getWidth()-SimpleTorpedo.getTWidth()-20;r+=41)
+        for(int c=0;c<obstacles[0].length;c+=41){
+        obstacles[r][c]=(Math.random()<0.08);
         }
         
         
@@ -54,10 +54,7 @@ public class SimpleGame extends JPanel
         
         ActionListener action=new ActionListener() {
           public void actionPerformed(ActionEvent evt){
-          if(!(arrows==null || wasd==null)){
-            arrows.update(arrows.getSimpleTorpedo().draw(getGraphics()));
-            wasd.update(arrows.getSimpleTorpedo().draw(getGraphics()));
-            }
+         
             repaint();
           }
         };
@@ -90,34 +87,29 @@ public class SimpleGame extends JPanel
                //and shift is change the state of above or below water.
                if(code==KeyEvent.VK_LEFT){
                   arrows.setDirection("l");
-                  if(!arrowTorpedo.isFiring())
-                  arrowTorpedo.setDirection(arrows.getDirection());
+                  arrows.update();
                }
                else if (code==KeyEvent.VK_RIGHT){
                   arrows.setDirection("r");
-                  if(!arrowTorpedo.isFiring())
-                  arrowTorpedo.setDirection(arrows.getDirection());
+                  arrows.update();
                }
                else if (code==KeyEvent.VK_UP){
                   arrows.setDirection("u");
-                  if(!arrowTorpedo.isFiring())
-                  arrowTorpedo.setDirection(arrows.getDirection());
+                  arrows.update();
                 }
                else if (code==KeyEvent.VK_DOWN){
                   arrows.setDirection("d");
-                  if(!arrowTorpedo.isFiring())
-                  arrowTorpedo.setDirection(arrows.getDirection());
+                  arrows.update();
                 }
                else if (code==KeyEvent.VK_ENTER){
-                  arrowTorpedo.setFire(true);
+                  arrows.getNewSimpleTorpedo();
                 }
                else if (code==KeyEvent.VK_SHIFT){
                   arrows.setIsUnderWater(!arrows.isUnderWater());
-                  arrowTorpedo.setIsUnderWater(!arrowTorpedo.isUnderWater());
                 }
                //Note: space is for wasd submarine 
                else if (code==KeyEvent.VK_SPACE){
-                  wasd.getSimpleTorpedo().setFire(true);
+                  wasd.getNewSimpleTorpedo();
                 }
             }
             
@@ -126,27 +118,22 @@ public class SimpleGame extends JPanel
                 SimpleTorpedo wasdTorpedo=wasd.getSimpleTorpedo();
                 if(character=='W'||character=='w'){
                   wasd.setDirection("u");
-                  if(!wasdTorpedo.isFiring())
-                  wasdTorpedo.setDirection(wasd.getDirection());
+                  wasd.update();
                 }
                 else if(character=='A'||character=='a'){
                   wasd.setDirection("l");
-                  if(!wasdTorpedo.isFiring())
-                  wasdTorpedo.setDirection(wasd.getDirection());
+                  wasd.update();
                 }
                 else if(character=='S'||character=='s'){
                   wasd.setDirection("d");
-                  if(!wasdTorpedo.isFiring())
-                  wasdTorpedo.setDirection(wasd.getDirection());
+                  wasd.update();
                 }
                 else if(character=='D'||character=='d'){
                   wasd.setDirection("r");
-                  if(!wasdTorpedo.isFiring())
-                  wasdTorpedo.setDirection(wasd.getDirection());
+                  wasd.update();
                 }
                 else if(character=='C'||character=='c'){
                   wasd.setIsUnderWater(!wasd.isUnderWater());
-                  wasdTorpedo.setIsUnderWater(!wasdTorpedo.isUnderWater());
                 }
             }
             
@@ -166,16 +153,16 @@ public class SimpleGame extends JPanel
      
      setBackground(Color.CYAN);
      
-     for(int r=SimpleSubmarine.getWidth()+SimpleTorpedo.getTWidth();
-        r<obstacles.length-SimpleSubmarine.getWidth()-SimpleTorpedo.getTWidth();r++)
-        for(int c=0;c<obstacles[0].length;c++){
+     for(int r=SimpleSubmarine.getWidth()+SimpleTorpedo.getTWidth()+20;
+        r<obstacles.length-SimpleSubmarine.getWidth()-SimpleTorpedo.getTWidth()-20;r+=41)
+        for(int c=0;c<obstacles[0].length;c+=41){
         if(obstacles[r][c]&&r%2==1) {
             g.setColor(Color.green);
-            g.fillRect(r,c,1,1);
+            g.fillRect(r,c,41,41);
         }
         else if(obstacles[r][c]) {
             g.setColor(Color.black);
-            g.fillRect(r,c,1,1);
+            g.fillRect(r,c,41,41);
         }
         }
         
