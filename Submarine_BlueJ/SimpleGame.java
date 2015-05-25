@@ -20,6 +20,7 @@ public class SimpleGame extends JPanel
         window.setResizable(false);
         window.setVisible(true);
         System.out.println("Welcome to Submarine World!");
+        System.out.println("Winning once and one hundred times is the same...");
         System.out.println("Bugs are abundant, so enjoy the feast!");
         System.out.println("To play the game, 2 people is best"+"\n"+"unless you can fight your right hand with left");
         System.out.println("First submarine: WASD");

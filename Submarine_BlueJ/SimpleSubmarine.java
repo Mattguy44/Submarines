@@ -85,11 +85,11 @@ public class SimpleSubmarine
    //to update the current frame
    public void update(){
     if(isExploding) {
-        explosionFrameNumber++;
-        if (explosionFrameNumber == 20) {
+        /*explosionFrameNumber++;
+        if (explosionFrameNumber == 10) {
         isExploding=false;
         System.out.println(Ename+" wins, congrats!");
-        }
+        }*/
     }
     else {
          if(direction.equals ("l")){

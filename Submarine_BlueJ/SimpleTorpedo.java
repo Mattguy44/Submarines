@@ -39,10 +39,10 @@ public class SimpleTorpedo
             if(opp.isExploding())
             {
                explosionFrameNumber++;
-                if (explosionFrameNumber == 150) {
+                if (explosionFrameNumber == 20) {
                opp.setExploding(false);
                cont=false;
-               System.out.println(opp.getEName()+" wins!~~~ Congrats1");
+               System.out.println(opp.getEName()+" wins!~~~ Congrats!");
             }
         }
         
