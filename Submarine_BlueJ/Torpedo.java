@@ -27,6 +27,10 @@ public class Torpedo
         isUnderwater = uw;
     }
 
+    
+         /**
+         *  defines what will happen after hit an object
+         */
     public void hit(Graphics g){
         g.setColor(Color.yellow);
 
@@ -43,7 +47,10 @@ public class Torpedo
             2*explosionFrameNumber
         );
     }
-
+     
+         /**
+         *  update what will happen based on direction
+         */
     public void update(Submarine opp){ //if the torpedo is firing, react correspondingly
 
             if(obstacle[centerX][centerY]){ 
@@ -75,6 +82,10 @@ public class Torpedo
         //like to know what's your guys' prefered parameter as direction
     }
 
+    
+         /**
+         * draw the given torpedo
+         */
     public void draw(Graphics g){ //draw the Torpedo
 
         g.setColor(new Color(155,0,0));
@@ -87,7 +98,8 @@ public class Torpedo
      *   They can all be done in KeyListener
      *1. Include accessor methods getCenterX(),getCenterY(),getWidth(),getHeight()
      *   (Of course you first need instance variables centerX,centerY,width,height...)
-     *2. Include mutator  methods  setExploding(boolean ex), setFrameNumber (int frame)
+     *2. Include mutator  methods like  setExploding(boolean ex), setFrameNumber (int frame)
      *I will design a simple class of how things can be done in the same project, Bye-bye!
+     *Already finished: see SimpleGame... took me a long long time
      */
 }
