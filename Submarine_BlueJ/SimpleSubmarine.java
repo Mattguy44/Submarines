@@ -15,16 +15,18 @@ public class SimpleSubmarine
    private boolean isExploding;
    private String direction;  
    private boolean [][] obstacle;
-   private static int width=48,height=48;
+   private static int width=49,height=49;
    private int explosionFrameNumber;  
    private SimpleTorpedo st;
+   private String Ename;
    //Constructor
-   public SimpleSubmarine(boolean [][] o,String dir,int x,int y,int magVelocity,int torSpeed, boolean uw){
+   public SimpleSubmarine(boolean [][] o,String Ename,String dir,int x,int y,int magVelocity,int torSpeed, boolean uw){
      obstacle=o;
      direction=dir;
      centerX=x;
      centerY=y;
      this.torSpeed=torSpeed;
+     this.Ename=Ename;
      speed = magVelocity;
      isUnderWater = uw;
      isExploding=false;
@@ -54,6 +56,8 @@ public class SimpleSubmarine
    public static int getWidth() {return width;}
    public static int getHeight() {return height;}
    public SimpleTorpedo getSimpleTorpedo(){return st;}
+   public boolean isExploding() {return isExploding;}
+   public String getEName(){return Ename;}
    //mutators
    public void setExploding(boolean ex) {isExploding=ex;}
    public void setFrameNumber(int frame) {explosionFrameNumber=frame;}
@@ -84,6 +88,7 @@ public class SimpleSubmarine
         explosionFrameNumber++;
         if (explosionFrameNumber == 20) {
         isExploding=false;
+        System.out.println(Ename+" wins, congrats!");
         }
     }
     else {
@@ -131,7 +136,7 @@ public class SimpleSubmarine
         else
         g.setColor(Color.black);
     g.fillRect(centerX-width/2,centerY-height/2,width,height);
-    if(isExploding){
+    /*if(isExploding){
     g.setColor(Color.yellow);
     
     g.fillOval(centerX-4*explosionFrameNumber,
@@ -146,7 +151,7 @@ public class SimpleSubmarine
     4*explosionFrameNumber,
     2*explosionFrameNumber
     );
-    }
+    }*/
     
     if(st!=null)
     st.draw(g);

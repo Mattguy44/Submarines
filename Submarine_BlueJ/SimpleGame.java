@@ -19,6 +19,22 @@ public class SimpleGame extends JPanel
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setResizable(false);
         window.setVisible(true);
+        System.out.println("Welcome to Submarine World!");
+        System.out.println("Bugs are abundant, so enjoy the feast!");
+        System.out.println("To play the game, 2 people is best"+"\n"+"unless you can fight your right hand with left");
+        System.out.println("First submarine: WASD");
+        System.out.println("W:up S:down A:left D:right");
+        System.out.println("Space:firing Torpedo; C:change color");
+        System.out.println("Second submarine: Arrow");
+        System.out.println("Directions follows arrows");
+        System.out.println("Enter:firing Torpedo; Shift:change color");
+        System.out.println("Green stands for under water;black stands for above water");
+        System.out.println("The obstacles are good hidden place,but don't abuse it");
+        System.out.println("Knowing your location is the key");
+        System.out.println("To end the game, close the window");
+        System.out.println("Prepare for the explosion! hahaha");
+        System.out.println("Have a wonderful game play!");
+        System.out.println("Don't close the window: waiting for the winner!");
     }
 
     private Timer timer;
@@ -42,9 +58,9 @@ public class SimpleGame extends JPanel
         
         
         for(int r=SimpleSubmarine.getWidth()+SimpleTorpedo.getTWidth()+20;
-        r<obstacles.length-SimpleSubmarine.getWidth()-SimpleTorpedo.getTWidth()-20;r+=41)
-        for(int c=0;c<obstacles[0].length;c+=41){
-        obstacles[r][c]=(Math.random()<0.08);
+        r<obstacles.length-SimpleSubmarine.getWidth()-SimpleTorpedo.getTWidth()-20;r+=49)
+        for(int c=0;c<obstacles[0].length;c+=49){
+        obstacles[r][c]=(Math.random()<0.2);
         }
         
         
@@ -156,15 +172,15 @@ public class SimpleGame extends JPanel
      setBackground(Color.CYAN);
      
      for(int r=SimpleSubmarine.getWidth()+SimpleTorpedo.getTWidth()+20;
-        r<obstacles.length-SimpleSubmarine.getWidth()-SimpleTorpedo.getTWidth()-20;r+=41)
-        for(int c=0;c<obstacles[0].length;c+=41){
+        r<obstacles.length-SimpleSubmarine.getWidth()-SimpleTorpedo.getTWidth()-20;r+=49)
+        for(int c=0;c<obstacles[0].length;c+=49){
         if(obstacles[r][c]&&r%2==1) {
             g.setColor(Color.green);
-            g.fillRect(r,c,41,41);
+            g.fillRect(r,c,49,49);
         }
         else if(obstacles[r][c]) {
             g.setColor(Color.black);
-            g.fillRect(r,c,41,41);
+            g.fillRect(r,c,49,49);
         }
         }
         
@@ -173,9 +189,9 @@ public class SimpleGame extends JPanel
       heightPanel=getHeight();
       int speedOfSubmarine=(int)(Math.random()*50)+20;
       int speedOfTorpedo=(int)(Math.random()*20)+15;
-      arrows=new SimpleSubmarine(obstacles,"r",SimpleSubmarine.getHeight()/2+1,heightPanel-1-SimpleSubmarine.getWidth()/2,
+      arrows=new SimpleSubmarine(obstacles,"WASD","r",SimpleSubmarine.getHeight()/2+1,heightPanel-1-SimpleSubmarine.getWidth()/2,
       speedOfSubmarine,speedOfTorpedo,true);
-      wasd=new SimpleSubmarine(obstacles,"l",widthPanel-1-SimpleSubmarine.getHeight()/2,SimpleSubmarine.getWidth()/2+1,
+      wasd=new SimpleSubmarine(obstacles,"Arrow","l",widthPanel-1-SimpleSubmarine.getHeight()/2,SimpleSubmarine.getWidth()/2+1,
       speedOfSubmarine,speedOfTorpedo,false);
     }
     
@@ -183,7 +199,7 @@ public class SimpleGame extends JPanel
        g.setColor(Color.BLACK);
     else{
      g.setColor(Color.CYAN);
-     g.drawString("Click to activate",100,20);
+     g.drawString("Click to activate",0,20);
      //g.setColor(Color.gray);
     }   
     

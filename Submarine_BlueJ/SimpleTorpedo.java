@@ -14,6 +14,7 @@ public class SimpleTorpedo
     private boolean [][] obstacle; //SimpleSubmarine doesn't count
     private static int tWidth=24,tHeight=24; //Example
     private boolean cont;
+    private int explosionFrameNumber;  
     /**
      * Constructor to create a Torpedo with right location, direction, known map, and other states.
      */
@@ -35,6 +36,16 @@ public class SimpleTorpedo
     public boolean isCont() {return cont;}
     
     public void update(SimpleSubmarine opp){ //if the torpedo is firing, react correspondingly
+            if(opp.isExploding())
+            {
+               explosionFrameNumber++;
+                if (explosionFrameNumber == 150) {
+               opp.setExploding(false);
+               cont=false;
+               System.out.println(opp.getEName()+" wins!~~~ Congrats1");
+            }
+        }
+        
             if(obstacle[centerX][centerY]){ 
                 cont=false;
                 if(centerX%2==1&&isUnderWater||centerX%2==0&&!isUnderWater) 
@@ -100,5 +111,21 @@ public class SimpleTorpedo
         g.setColor(Color.black);
         g.fillOval(centerX-tWidth/2,centerY-tHeight/2,tWidth,tHeight);
         //Make the Torpedo a circle for convenience.
+            if(!cont){
+    g.setColor(Color.yellow);
+    
+    g.fillOval(centerX-4*explosionFrameNumber,
+    centerY-4*explosionFrameNumber,
+    8*explosionFrameNumber,
+    8*explosionFrameNumber);
+    
+    g.setColor(Color.red);
+    
+    g.fillOval(centerX-2*explosionFrameNumber,
+    centerY-explosionFrameNumber,
+    4*explosionFrameNumber,
+    2*explosionFrameNumber
+    );
+    }
     }
 }
