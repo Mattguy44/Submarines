@@ -14,6 +14,7 @@ public class Torpedo
     private String direction;
     private boolean [][] obstacle; //Submarine doesn't count
     private final int tWidth=5,tHeight=5; //Example
+    
     /**
      * Constructor to create a Torpedo with right location, direction, known map, and other states.
      */

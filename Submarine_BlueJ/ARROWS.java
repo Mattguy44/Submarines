@@ -19,7 +19,8 @@ public class ARROWS extends Submarine
     {
         super(isUnder, torpedoes);
     }
-    private class Listener implements ActionListener {
+    private class Listener implements KeyListener {
+        public void keyTyped(KeyEvent e) {}
         public void keyPressed(KeyEvent e){
             int key = e.getKeyCode();
             if (key == KeyEvent.VK_LEFT) {

@@ -19,36 +19,40 @@ public class WASD extends Submarine
         super(isUnder,torpedoes);
     }
 
-    public void keyPressed(KeyEvent e){
-        int key = e.getKeyCode();
-        if (key == KeyEvent.VK_A) {
-            x = -25;
-            repaint();
-        }
-        if (key == KeyEvent.VK_D) {
-            x = 25;
-            repaint();
-        }
-        if (key == KeyEvent.VK_W) {
-            y = -25;
-            repaint();
-        }
-        if (key == KeyEvent.VK_S) {
-            y = 25;
-            repaint();
-        }
-    }
-    public void keyReleased(KeyEvent e){
-        int key = e.getKeyCode();
-        if (key == KeyEvent.VK_SPACE) {
-            numTorpedoes--;
-        }
-        if (key == KeyEvent.VK_X){
-            if(underWater == false){
-                underWater = true;
+    private class Listener implements KeyListener {
+        public void keyTyped(KeyEvent e) {}
+        public void keyPressed(KeyEvent e){
+            int key = e.getKeyCode();
+            if (key == KeyEvent.VK_A) {
+                x = -25;
+                repaint();
             }
-            else{
-                underWater = false;
+            if (key == KeyEvent.VK_D) {
+                x = 25;
+                repaint();
+            }
+            if (key == KeyEvent.VK_W) {
+                y = -25;
+                repaint();
+            }
+            if (key == KeyEvent.VK_S) {
+                y = 25;
+                repaint();
+            }
+        }
+
+        public void keyReleased(KeyEvent e){
+            int key = e.getKeyCode();
+            if (key == KeyEvent.VK_SPACE) {
+                numTorpedoes--;
+            }
+            if (key == KeyEvent.VK_X){
+                if(underWater == false){
+                    underWater = true;
+                }
+                else{
+                    underWater = false;
+                }
             }
         }
     }
