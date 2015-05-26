@@ -51,6 +51,11 @@ public class SimpleTorpedo
     public boolean isCont() {return cont;}
 
     /**
+     *  Mutator method speedReset(): to set the speedTor 0
+     */
+    public void speedReset() {speedTor=0;}
+    
+    /**
      *   Update the torpedo motion: first check if Torpedo is exploding second check how does it move
      */
     public void update(SimpleSubmarine opp){ //if the torpedo is firing, react correspondingly
@@ -62,7 +67,7 @@ public class SimpleTorpedo
                 cont=false;
                 System.out.println(opp.getEName()+" wins!~~~ Congrats!");
             }
-            else if (explosionFrameNumber == 500){
+            else if (explosionFrameNumber == 550){
                 System.exit(0);
             }
         }

@@ -72,11 +72,18 @@ public class SimpleGame extends JPanel
          */
         ActionListener action=new ActionListener() {
                 public void actionPerformed(ActionEvent evt){
+                    if((arrows.getSimpleTorpedo()!=null&&!arrows.getSimpleTorpedo().isCont()
+                    || wasd.getSimpleTorpedo()!=null && !wasd.getSimpleTorpedo().isCont()))
+                    {arrows.speedReset();
+                     wasd.speedReset();
+                    }
+
                     if(arrows.getSimpleTorpedo()!=null)
                         arrows.getSimpleTorpedo().update(wasd);
                     if(wasd.getSimpleTorpedo()!=null)
                         wasd.getSimpleTorpedo().update(arrows);
-                    repaint();
+
+                   repaint();
                 }
             };
         timer=new Timer(25,action);
@@ -132,13 +139,19 @@ public class SimpleGame extends JPanel
                         arrows.update();
                     }
                     else if (code==KeyEvent.VK_ENTER){
+                        if(!(arrows.getSimpleTorpedo()!=null&&!arrows.getSimpleTorpedo().isCont()
+                    || wasd.getSimpleTorpedo()!=null && !wasd.getSimpleTorpedo().isCont()))
                         arrows.getNewSimpleTorpedo();
                     }
                     else if (code==KeyEvent.VK_SHIFT){
+                        if(!(arrows.getSimpleTorpedo()!=null&&!arrows.getSimpleTorpedo().isCont()
+                    || wasd.getSimpleTorpedo()!=null && !wasd.getSimpleTorpedo().isCont()))
                         arrows.setIsUnderWater(!arrows.isUnderWater());
                     }
                     //Note: space is for wasd submarine 
                     else if (code==KeyEvent.VK_SPACE){
+                        if(!(arrows.getSimpleTorpedo()!=null&&!arrows.getSimpleTorpedo().isCont()
+                    || wasd.getSimpleTorpedo()!=null && !wasd.getSimpleTorpedo().isCont()))
                         wasd.getNewSimpleTorpedo();
                     }
                 }
@@ -163,6 +176,8 @@ public class SimpleGame extends JPanel
                         wasd.update();
                     }
                     else if(character=='C'||character=='c'){
+                        if(!(arrows.getSimpleTorpedo()!=null&&!arrows.getSimpleTorpedo().isCont()
+                    || wasd.getSimpleTorpedo()!=null && !wasd.getSimpleTorpedo().isCont()))
                         wasd.setIsUnderWater(!wasd.isUnderWater());
                     }
                 }
