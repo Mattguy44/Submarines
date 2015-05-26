@@ -24,19 +24,19 @@ public class WASD extends Submarine
         public void keyPressed(KeyEvent e){
             int key = e.getKeyCode();
             if (key == KeyEvent.VK_A) {
-                x = -25;
+                x = -5;
                 repaint();
             }
             if (key == KeyEvent.VK_D) {
-                x = 25;
+                x = 5;
                 repaint();
             }
             if (key == KeyEvent.VK_W) {
-                y = -25;
+                y = -5;
                 repaint();
             }
             if (key == KeyEvent.VK_S) {
-                y = 25;
+                y = 5;
                 repaint();
             }
         }
