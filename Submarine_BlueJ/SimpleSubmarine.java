@@ -123,7 +123,16 @@ public class SimpleSubmarine
      * Mutator method: set if submarine is under water
      */
     public void setIsUnderWater(boolean water) {isUnderWater=water;}
-
+    
+    
+    /**
+     * Mutator method: reset all speed to 0
+     */
+    public void speedReset() 
+    {speed=0;
+     torSpeed=0;
+    }
+    
     /**
      * Make a new torpedo start at the center
      */
