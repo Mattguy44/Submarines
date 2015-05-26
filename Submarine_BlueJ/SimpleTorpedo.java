@@ -62,6 +62,9 @@ public class SimpleTorpedo
                 cont=false;
                 System.out.println(opp.getEName()+" wins!~~~ Congrats!");
             }
+            else if (explosionFrameNumber == 500){
+                System.exit(0);
+            }
         }
 
         if(obstacle[centerX][centerY]){ 
