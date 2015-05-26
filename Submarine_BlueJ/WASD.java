@@ -18,7 +18,15 @@ public class WASD extends Submarine
     {
         super(isUnder,torpedoes);
     }
-
+    public void draw(Graphics g){
+        if(underwater=true){
+            g.setColor(Color.BLACK);
+        }
+        else{
+            g.setColor(Color.RED);
+        }
+        g.drawOval(50,10,x,y);
+    }
     private class Listener implements KeyListener {
         public void keyTyped(KeyEvent e) {}
         public void keyPressed(KeyEvent e){
