@@ -7,4 +7,6 @@ comment2.params=
 comment2.target=void\ fire()
 comment3.params=x\ y
 comment3.target=void\ setLocation(int,\ int)
-numComments=4
+comment4.params=dir
+comment4.target=void\ setDirection(java.lang.String)
+numComments=5

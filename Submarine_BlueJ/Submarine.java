@@ -10,8 +10,6 @@ import java.awt.event.*;
 import java.awt.*;
 public abstract class Submarine
 {
-    private int dimmensionsX = 100;
-    private int dimmensionsY = 50;
     private boolean isUnderwater = false;
     private int locationX;
     private int locationY;
@@ -33,6 +31,9 @@ public abstract class Submarine
     public void setLocation (int x, int y){
         locationX = x;
         locationY = y;
+    }
+    public void setDirection(String dir){
+        curDir = dir;
     }
     //public abstract boolean submerge(); //returns true if successful sumberge, false if failed
     //public abstract void move(); // differs by keys used (depending on player)
