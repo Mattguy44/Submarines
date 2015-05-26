@@ -1,5 +1,5 @@
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import java.awt.event.*;
+import java.awt.*;
 /**
  * Write a description of class Arrows here.
  * 
@@ -17,38 +17,42 @@ public class ARROWS extends Submarine
     // "/"  for under
     public ARROWS(boolean isUnder, int torpedoes)
     {
-       super(isUnder, torpedoes);
+        super(isUnder, torpedoes);
     }
+    private class Listener implements KeyListener {
+        public void keyTyped(KeyEvent e) {}
         public void keyPressed(KeyEvent e){
-        int key = e.getKeyCode();
-        if (key == KeyEvent.VK_LEFT) {
-            x = -25;
-            repaint();
-        }
-        if (key == KeyEvent.VK_RIGHT) {
-            x = 25;
-            repaint();
-        }
-        if (key == KeyEvent.VK_UP) {
-            y = -25;
-            repaint();
-        }
-        if (key == KeyEvent.VK_DOWN) {
-            y = 25;
-            repaint();
-        }
-    }
-    public void keyReleased(KeyEvent e){
-        int key = e.getKeyCode();
-        if (key == KeyEvent.VK_SHIFT) {
-            numTorpedoes--;
-        }
-        if (key == KeyEvent.VK_SLASH){
-            if(underWater == false){
-                underWater = true;
+            int key = e.getKeyCode();
+            if (key == KeyEvent.VK_LEFT) {
+                x = -25;
+                repaint();
             }
-            else{
-                underWater = false;
+            if (key == KeyEvent.VK_RIGHT) {
+                x = 25;
+                repaint();
+            }
+            if (key == KeyEvent.VK_UP) {
+                y = -25;
+                repaint();
+            }
+            if (key == KeyEvent.VK_DOWN) {
+                y = 25;
+                repaint();
+            }
+        }
+
+        public void keyReleased(KeyEvent e){
+            int key = e.getKeyCode();
+            if (key == KeyEvent.VK_SHIFT) {
+                numTorpedoes--;
+            }
+            if (key == KeyEvent.VK_SLASH){
+                if(underWater == false){
+                    underWater = true;
+                }
+                else{
+                    underWater = false;
+                }
             }
         }
     }

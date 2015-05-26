@@ -6,7 +6,8 @@
  * @version (a version number or a date)
  */
 import javax.swing.*;
-public abstract class Submarine extends JFrameAdded
+import java.awt.event.*;
+public abstract class Submarine
 {
     private int dimmensionsX = 100;
     private int dimmensionsY = 50;
@@ -14,16 +15,26 @@ public abstract class Submarine extends JFrameAdded
     private int locationX;
     private int locationY;
     private int TOR_SPEED;
-    public Submarine(boolean isUnder){
+    private String curDir = "UP"; //current direction
+    private int numTorpedoes;
+    public Submarine(boolean isUnder, int tors){
         isUnderwater=isUnder;
+        numTorpedoes = tors;
     }
     public static void main(String [] args){
-        new JFrameAdded();
+        //new JFrameAdded();
     }
-    public void fire(String direction){
+    public void fire(){
+        
         //new Torpedo(dimmensionsX, isUnderwater);
         //new Torpedo(direction, isUnderwater);
     }
-    public abstract boolean submerge(); //returns true if successful sumberge, false if failed
-    public abstract void move(); // differs by keys used (depending on player)
+    public void setLocation (int x, int y){
+        locationX = x;
+        locationY = y;
+    }
+    public void paint(Graphics G){
+    }
+    //public abstract boolean submerge(); //returns true if successful sumberge, false if failed
+    //public abstract void move(); // differs by keys used (depending on player)
 }

@@ -14,6 +14,7 @@ public class Torpedo
     private String direction;
     private boolean [][] obstacle; //Submarine doesn't count
     private final int tWidth=5,tHeight=5; //Example
+    
     /**
      * Constructor to create a Torpedo with right location, direction, known map, and other states.
      */
@@ -27,6 +28,10 @@ public class Torpedo
         isUnderwater = uw;
     }
 
+    
+         /**
+         *  defines what will happen after hit an object
+         */
     public void hit(Graphics g){
         g.setColor(Color.yellow);
 
@@ -43,9 +48,12 @@ public class Torpedo
             2*explosionFrameNumber
         );
     }
-
+     
+         /**
+         *  update what will happen based on direction
+         */
     public void update(Submarine opp){ //if the torpedo is firing, react correspondingly
-<<<<<<< HEAD
+
             if(obstacle[centerX][centerY]){ 
                 //Torpedo this=null;
             }
@@ -58,20 +66,6 @@ public class Torpedo
             else{
                 if(direction.equals ("l") || direction.equals("L")
                 || direction.equals ("left") || direction.equals("LEFT"))
-=======
-        if(obstacle[centerX][centerY]){ 
-
-        }
-        /*else if(Math.abs(opp.getCenterX-centerX)<= opp.getWidth()/2.
-        &&      Math.abs(opp.getCenterX-centerY)<= opp.getHeight()/2.){
-        opp.setExploding (true);
-        opp.setFrameNumber (1);        
-        Torpedo=null;
-        }*/
-        else{
-            if(direction.equals ("l") || direction.equals("L")
-            || direction.equals ("left") || direction.equals("LEFT"))
->>>>>>> af76d9d06c9e093c86503b2de88602c3c632f8e5
                 centerX-=speed;
             else if(direction.equals("r") || direction.equals("R")
             || direction.equals("right") || direction.equals("RIGHT"))
@@ -89,6 +83,10 @@ public class Torpedo
         //like to know what's your guys' prefered parameter as direction
     }
 
+    
+         /**
+         * draw the given torpedo
+         */
     public void draw(Graphics g){ //draw the Torpedo
 
         g.setColor(new Color(155,0,0));
@@ -101,7 +99,8 @@ public class Torpedo
      *   They can all be done in KeyListener
      *1. Include accessor methods getCenterX(),getCenterY(),getWidth(),getHeight()
      *   (Of course you first need instance variables centerX,centerY,width,height...)
-     *2. Include mutator  methods  setExploding(boolean ex), setFrameNumber (int frame)
+     *2. Include mutator  methods like  setExploding(boolean ex), setFrameNumber (int frame)
      *I will design a simple class of how things can be done in the same project, Bye-bye!
+     *Already finished: see SimpleGame... took me a long long time
      */
 }
