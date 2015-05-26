@@ -30,6 +30,7 @@ public class SimpleGame extends JPanel
         System.out.println("Directions follows arrows");
         System.out.println("Enter:firing Torpedo; Shift:change color");
         System.out.println("Green stands for under water;black stands for above water");
+        System.out.println("Only both under water or both above water can attack successfully");
         System.out.println("The obstacles are good hidden place,but don't abuse it");
         System.out.println("Knowing your location is the key");
         System.out.println("To end the game, close the window");
