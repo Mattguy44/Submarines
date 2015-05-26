@@ -18,25 +18,33 @@ public class WASD extends Submarine
     {
         super(isUnder,torpedoes);
     }
-
+    public void draw(Graphics g){
+        if(underwater=true){
+            g.setColor(Color.BLACK);
+        }
+        else{
+            g.setColor(Color.RED);
+        }
+        g.drawOval(50,10,x,y);
+    }
     private class Listener implements KeyListener {
         public void keyTyped(KeyEvent e) {}
         public void keyPressed(KeyEvent e){
             int key = e.getKeyCode();
             if (key == KeyEvent.VK_A) {
-                x = -25;
+                x = -5;
                 repaint();
             }
             if (key == KeyEvent.VK_D) {
-                x = 25;
+                x = 5;
                 repaint();
             }
             if (key == KeyEvent.VK_W) {
-                y = -25;
+                y = -5;
                 repaint();
             }
             if (key == KeyEvent.VK_S) {
-                y = 25;
+                y = 5;
                 repaint();
             }
         }

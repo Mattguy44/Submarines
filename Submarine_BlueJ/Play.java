@@ -98,6 +98,8 @@ public class Play
                         m.fillRect(r*5, c*5, 5, 5);
                 }
             }
+            p1.draw(m);
+            p2.draw(m);
         }
         
         public void init(){}

@@ -23,6 +23,7 @@ dependency7.type=UsesDependency
 dependency8.from=JFrameAdded
 dependency8.to=JPanelAdded
 dependency8.type=UsesDependency
+<<<<<<< HEAD
 objectbench.height=100
 objectbench.width=1148
 package.editor.height=478
@@ -30,6 +31,28 @@ package.editor.width=1355
 package.editor.x=220
 package.editor.y=267
 package.numDependencies=8
+=======
+<<<<<<< HEAD
+objectbench.height=100
+objectbench.width=983
+package.editor.height=400
+package.editor.width=875
+package.editor.x=248
+package.editor.y=32
+package.numDependencies=8
+=======
+dependency9.from=Play
+dependency9.to=WASD
+dependency9.type=UsesDependency
+objectbench.height=76
+objectbench.width=1148
+package.editor.height=478
+package.editor.width=1050
+package.editor.x=61
+package.editor.y=56
+package.numDependencies=9
+>>>>>>> 15dcc7dd0d383bd353bc4957007661b676a16c32
+>>>>>>> 888de62d12f82c6acf9a612659ce6759736e1507
 package.numTargets=11
 package.showExtends=true
 package.showUses=true
