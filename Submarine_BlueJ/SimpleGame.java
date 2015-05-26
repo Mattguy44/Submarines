@@ -5,8 +5,8 @@ import javax.swing.*;
 /**
  * Write a description of class SimpleGame here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (your name) Neo
+ * @version (a version number or a date) 5/25/15
  */
 public class SimpleGame extends JPanel
 {
@@ -60,8 +60,8 @@ public class SimpleGame extends JPanel
         obstacles=new boolean [500][500];
 
         for(int r=SimpleSubmarine.getWidth()+SimpleTorpedo.getTWidth()+20;
-        r<obstacles.length-SimpleSubmarine.getWidth()-SimpleTorpedo.getTWidth()-20;r+=49)
-            for(int c=0;c<obstacles[0].length;c+=49){
+        r<obstacles.length-SimpleSubmarine.getWidth()-SimpleTorpedo.getTWidth()-20;r+=63)
+            for(int c=0;c<obstacles[0].length;c+=63){
                 obstacles[r][c]=(Math.random()<0.5);
             }
 
@@ -184,15 +184,15 @@ public class SimpleGame extends JPanel
         setBackground(Color.CYAN);
 
         for(int r=SimpleSubmarine.getWidth()+SimpleTorpedo.getTWidth()+20;
-        r<obstacles.length-SimpleSubmarine.getWidth()-SimpleTorpedo.getTWidth()-20;r+=49)
-            for(int c=0;c<obstacles[0].length;c+=49){
+        r<obstacles.length-SimpleSubmarine.getWidth()-SimpleTorpedo.getTWidth()-20;r+=63)
+            for(int c=0;c<obstacles[0].length;c+=63){
                 if(obstacles[r][c]&&r%2==1) {
                     g.setColor(Color.green);
-                    g.fillRect(r,c,49,49);
+                    g.fillRect(r,c,63,63);
                 }
                 else if(obstacles[r][c]) {
                     g.setColor(Color.black);
-                    g.fillRect(r,c,49,49);
+                    g.fillRect(r,c,63,63);
                 }
             }
 

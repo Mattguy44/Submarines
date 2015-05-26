@@ -15,7 +15,7 @@ public class SimpleSubmarine
     private boolean isExploding;
     private String direction;  
     private boolean [][] obstacle;
-    private static int width=49,height=49;
+    private static int width=48,height=48;
     private int explosionFrameNumber;  
     private SimpleTorpedo st;
     private String Ename;
