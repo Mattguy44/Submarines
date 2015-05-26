@@ -34,11 +34,7 @@ public abstract class Submarine
         locationX = x;
         locationY = y;
     }
-<<<<<<< HEAD
-    //public void paint(Graphics G){
-    //}
-=======
->>>>>>> 25fef22afc41f3be8674eb52cdf2b47d81bff8ef
+
     //public abstract boolean submerge(); //returns true if successful sumberge, false if failed
     //public abstract void move(); // differs by keys used (depending on player)
 }

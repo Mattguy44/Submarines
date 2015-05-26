@@ -1,5 +1,6 @@
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+
 /**
  * Write a description of class WASD here.
  * 
@@ -25,19 +26,19 @@ public class WASD extends Submarine
             int key = e.getKeyCode();
             if (key == KeyEvent.VK_A) {
                 x = -5;
-                repaint();
+                //repaint();
             }
             if (key == KeyEvent.VK_D) {
                 x = 5;
-                repaint();
+                //repaint();
             }
             if (key == KeyEvent.VK_W) {
                 y = -5;
-                repaint();
+                //repaint();
             }
             if (key == KeyEvent.VK_S) {
                 y = 5;
-                repaint();
+                // repaint();
             }
         }
 
