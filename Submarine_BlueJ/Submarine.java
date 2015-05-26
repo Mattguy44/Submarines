@@ -6,6 +6,7 @@
  * @version (a version number or a date)
  */
 import javax.swing.*;
+import java.awt.event.*;
 public abstract class Submarine extends JFrameAdded
 {
     private int dimmensionsX = 100;
