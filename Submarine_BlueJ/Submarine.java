@@ -10,8 +10,6 @@ import java.awt.event.*;
 import java.awt.*;
 public abstract class Submarine
 {
-    private int dimmensionsX = 100;
-    private int dimmensionsY = 50;
     private boolean isUnderwater = false;
     private int locationX;
     private int locationY;
@@ -22,32 +20,41 @@ public abstract class Submarine
         isUnderwater=isUnder;
         numTorpedoes = tors;
     }
+
     public static void main(String [] args){
         //new JFrameAdded();
     }
+
     public void fire(){
-        
+
         //new Torpedo(dimmensionsX, isUnderwater);
         //new Torpedo(direction, isUnderwater);
     }
+
     public void setLocation (int x, int y){
         locationX = x;
         locationY = y;
     }
-<<<<<<< HEAD
+    <<<<<<< HEAD
+    <<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
+    =======
+    public void setDirection(String dir){
+        curDir = dir;
+    }
+    >>>>>>> 888de62d12f82c6acf9a612659ce6759736e1507
+    =======
+    <<<<<<< HEAD
     public abstract void draw(Graphics g);
-    
-=======
-<<<<<<< HEAD
+
+    =======
+    <<<<<<< HEAD
     //public void paint(Graphics G){
     //}
-=======
->>>>>>> 25fef22afc41f3be8674eb52cdf2b47d81bff8ef
->>>>>>> 10bc9b714509dc5cf966d667a287c4a8a9fcbb39
->>>>>>> 2429398452c9aba761df312d9f5c50d52564bf36
+    =======
+    >>>>>>> 25fef22afc41f3be8674eb52cdf2b47d81bff8ef
+    >>>>>>> 10bc9b714509dc5cf966d667a287c4a8a9fcbb39
+    >>>>>>> 2429398452c9aba761df312d9f5c50d52564bf36
     //public abstract boolean submerge(); //returns true if successful sumberge, false if failed
     //public abstract void move(); // differs by keys used (depending on player)
 }
