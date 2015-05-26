@@ -7,6 +7,7 @@
  */
 import javax.swing.*;
 import java.awt.event.*;
+import java.awt.*;
 public abstract class Submarine
 {
     private int dimmensionsX = 100;
@@ -32,8 +33,6 @@ public abstract class Submarine
     public void setLocation (int x, int y){
         locationX = x;
         locationY = y;
-    }
-    public void paint(Graphics G){
     }
     //public abstract boolean submerge(); //returns true if successful sumberge, false if failed
     //public abstract void move(); // differs by keys used (depending on player)
