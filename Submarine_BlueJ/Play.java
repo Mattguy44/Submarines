@@ -15,6 +15,8 @@ public class Play
     private int BOARD_WIDTH;
     private int BOARD_HEIGHT;
     private boolean [][] obstacles;
+    private Submarine p1 = new ARROWS(false, 5);
+    private Submarine p2 = new WASD(false, 5);
     public Play (int width, int height) {
         BOARD_WIDTH = width;
         BOARD_HEIGHT = height;
@@ -26,7 +28,8 @@ public class Play
         obstacles = new boolean [BOARD_HEIGHT/5][BOARD_WIDTH/5];
         for (int x = 0; x < BOARD_WIDTH/10; x++)
         {
-            obstacles[(int)(Math.random()*obstacles.length)][(int)(Math.random()*obstacles[0].length)] = true;
+            obstacles[(int)(Math.random()*obstacles.length)]
+                        [(int)(Math.random()*obstacles[0].length)] = true;
         }
         for (int r = 0; r < obstacles.length; r++)
         {

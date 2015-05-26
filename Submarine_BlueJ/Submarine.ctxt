@@ -1,12 +1,12 @@
 #BlueJ class context
-comment0.params=isUnder
-comment0.target=Submarine(boolean)
+comment0.params=isUnder\ tors
+comment0.target=Submarine(boolean,\ int)
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
-comment2.params=direction
-comment2.target=void\ fire(java.lang.String)
-comment3.params=
-comment3.target=boolean\ submerge()
+comment2.params=
+comment2.target=void\ fire()
+comment3.params=x\ y
+comment3.target=void\ setLocation(int,\ int)
 comment4.params=
-comment4.target=void\ move()
+comment4.target=void\ paint()
 numComments=5
