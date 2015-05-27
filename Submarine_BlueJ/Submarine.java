@@ -10,27 +10,46 @@ import java.awt.event.*;
 import java.awt.*;
 public abstract class Submarine
 {
-    private boolean isUnderwater = false;
+    private boolean isUnderwater;
     private int locationX;
     private int locationY;
     private int TOR_SPEED;
     private String curDir = "UP"; //current direction
     private int numTorpedoes;
-    public Submarine(boolean isUnder, int tors){
+    public Submarine(boolean isUnder, int tors, int locX, int locY){
         isUnderwater=isUnder;
         numTorpedoes = tors;
+        locationX = locX;
+        locationY = locY;
     }
     public static void main(String [] args){
         //new JFrameAdded();
     }
     public void fire(){
-        
+        numTorpedoes--;
         //new Torpedo(dimmensionsX, isUnderwater);
         //new Torpedo(direction, isUnderwater);
     }
-    public void setLocation (int x, int y){
+    public void setX (int x){
         locationX = x;
+    }
+    public void setY (int y){
         locationY = y;
+    }
+    public int getX(){
+        return locationX;
+    }
+    public int getY(){
+        return locationY;
+    }
+    public boolean isUnder(){
+        return isUnderwater;
+    }
+    public void submerge(){
+        if (isUnderwater)
+            isUnderwater = false;
+        else
+            isUnderwater = true;
     }
 
     public void setDirection(String dir){
