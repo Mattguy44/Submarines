@@ -77,7 +77,7 @@ public class Play
     
     private class Board extends JFrame
     {
-        private JPanel pan = new JPanel();
+        Pan pan = new Pan();
         public Board(){
             
             this.setSize(BOARD_WIDTH,BOARD_HEIGHT);
@@ -89,8 +89,11 @@ public class Play
             this.setVisible(true);
             //islands();
         }
-        
+        private class Pan extends JPanel{
         public void paint(Graphics m){
+            paintComponent(m);
+            Graphics2D g2=(Graphics2D)m;
+            g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
             m.setColor(Color.CYAN);
             m.fillRect(0,0,BOARD_WIDTH,BOARD_HEIGHT);
             m.setColor(Color.GREEN);
@@ -111,9 +114,11 @@ public class Play
         public void start(){}
         public void stop(){}
     }
+    }
     
     private class Listener implements KeyListener {
-        public void keyTyped(KeyEvent e) {}
+        public Listener(){}
+        public void keyTyped(KeyEvent e) {keyPressed(e);}
         public void keyPressed(KeyEvent e){
             int key = e.getKeyCode();
             if (key == KeyEvent.VK_LEFT) {
