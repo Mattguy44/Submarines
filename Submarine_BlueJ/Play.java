@@ -76,8 +76,8 @@ public class Play
     
     private class Board extends JFrame
     {
+        private JPanel pan = new JPanel();
         public Board(){
-            JPanel pan = new JPanel();
             
             this.setSize(BOARD_WIDTH,BOARD_HEIGHT);
             this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

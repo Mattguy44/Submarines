@@ -26,7 +26,7 @@ public class ARROWS extends Submarine
         else{
             g.setColor(Color.RED);
         }
-        g.fillOval(getX(),getY(),40,15);
+        g.fillOval(getX()-20,getY()-8,40,15);
         G = g;
     }
     private class Listener implements KeyListener {
