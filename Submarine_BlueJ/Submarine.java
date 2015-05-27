@@ -28,49 +28,31 @@ public abstract class Submarine
     }
 
     public void fire(){
-<<<<<<< HEAD
+
 
         //new Torpedo(dimmensionsX, isUnderwater);
         //new Torpedo(direction, isUnderwater);
     }
 
     public void setLocation (int x, int y){
-=======
+
         numTorpedoes--;
         //new Torpedo(dimmensionsX, isUnderwater);
         //new Torpedo(direction, isUnderwater);
     }
     public void setX (int x){
->>>>>>> 67cb52596ae41c86dd1d85fa88cc1225d7b1bd2d
+
         locationX = x;
     }
     public void setY (int y){
         locationY = y;
     }
-<<<<<<< HEAD
-    <<<<<<< HEAD
-    <<<<<<< HEAD
 
-    =======
     public void setDirection(String dir){
         curDir = dir;
     }
-    >>>>>>> 888de62d12f82c6acf9a612659ce6759736e1507
-    =======
-    <<<<<<< HEAD
-    public abstract void draw(Graphics g);
 
-    =======
-    <<<<<<< HEAD
-    //public void paint(Graphics G){
-    //}
-    =======
-    >>>>>>> 25fef22afc41f3be8674eb52cdf2b47d81bff8ef
-    >>>>>>> 10bc9b714509dc5cf966d667a287c4a8a9fcbb39
-    >>>>>>> 2429398452c9aba761df312d9f5c50d52564bf36
-=======
 
-    public abstract void draw(Graphics g);
     public int getX(){
         return locationX;
     }
@@ -89,7 +71,7 @@ public abstract class Submarine
     public String getDir(String curDir){
     }
 
-    public void setDirection(String dir);
+    //public void setDirection(String dir);
     public abstract void draw(Graphics g);
     
 
@@ -97,7 +79,7 @@ public abstract class Submarine
     //}
 
 
->>>>>>> 67cb52596ae41c86dd1d85fa88cc1225d7b1bd2d
+
     //public abstract boolean submerge(); //returns true if successful sumberge, false if failed
     //public abstract void move(); // differs by keys used (depending on player)
 }
