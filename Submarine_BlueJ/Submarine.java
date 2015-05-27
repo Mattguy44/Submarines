@@ -48,14 +48,11 @@ public abstract class Submarine
         locationY = y;
     }
 
-<<<<<<< HEAD
-=======
     public void setDirection(String dir){
         curDir = dir;
     }
 
 
->>>>>>> e46168c452d9bfcd2d90e65756dd163f640d3688
     public int getX(){
         return locationX;
     }
@@ -75,13 +72,8 @@ public abstract class Submarine
         return curDir;
     }
 
-<<<<<<< HEAD
-    public void setDirection(String dir){
-        curDir = dir;
-    }
-=======
     //public void setDirection(String dir);
->>>>>>> e46168c452d9bfcd2d90e65756dd163f640d3688
+
     public abstract void draw(Graphics g);
     
 
