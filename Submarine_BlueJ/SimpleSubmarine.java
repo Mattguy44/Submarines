@@ -228,6 +228,7 @@ public class SimpleSubmarine
         2*explosionFrameNumber
         );
         }*/
+        
 
         if(st!=null)
             st.draw(g);
