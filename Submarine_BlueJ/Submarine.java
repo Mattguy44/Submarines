@@ -22,21 +22,40 @@ public abstract class Submarine
         locationX = locX;
         locationY = locY;
     }
+
     public static void main(String [] args){
         //new JFrameAdded();
     }
+
     public void fire(){
+
+
+        //new Torpedo(dimmensionsX, isUnderwater);
+        //new Torpedo(direction, isUnderwater);
+    }
+
+    public void setLocation (int x, int y){
+
         numTorpedoes--;
         //new Torpedo(dimmensionsX, isUnderwater);
         //new Torpedo(direction, isUnderwater);
     }
     public void setX (int x){
+
         locationX = x;
     }
     public void setY (int y){
         locationY = y;
     }
 
+<<<<<<< HEAD
+=======
+    public void setDirection(String dir){
+        curDir = dir;
+    }
+
+
+>>>>>>> e46168c452d9bfcd2d90e65756dd163f640d3688
     public int getX(){
         return locationX;
     }
@@ -56,14 +75,19 @@ public abstract class Submarine
         return curDir;
     }
 
+<<<<<<< HEAD
     public void setDirection(String dir){
         curDir = dir;
     }
+=======
+    //public void setDirection(String dir);
+>>>>>>> e46168c452d9bfcd2d90e65756dd163f640d3688
     public abstract void draw(Graphics g);
     
 
     //public void paint(Graphics G){
     //}
+
 
 
     //public abstract boolean submerge(); //returns true if successful sumberge, false if failed

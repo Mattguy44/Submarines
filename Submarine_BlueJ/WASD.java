@@ -1,5 +1,11 @@
+
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
+
 import java.awt.event.*;
 import java.awt.*;
+
 /**
  * Write a description of class WASD here.
  * 
@@ -21,6 +27,13 @@ public class WASD extends Submarine
         super(isUnder,torpedoes, locX, locY);
     }
 
+<<<<<<< HEAD
+=======
+    public String getDir(){
+        return curDir;
+    }
+
+>>>>>>> e46168c452d9bfcd2d90e65756dd163f640d3688
     public void draw(Graphics g){
         g.setColor(Color.RED);
         if(isUnder()){
@@ -41,7 +54,11 @@ public class WASD extends Submarine
             g.fillOval(getX(),getY(),40,15);
             g.fillRect(getX()-5,getY(),10,5);
         }
+<<<<<<< HEAD
         if(getDir().equals("DOWN")){
+=======
+        if(this.getDir().equals("DOWN")){
+>>>>>>> e46168c452d9bfcd2d90e65756dd163f640d3688
             g.fillOval(getX(),getY(),15,40);
             g.fillRect(getX()-5,getY(),10,5);
         }
@@ -56,6 +73,7 @@ public class WASD extends Submarine
             int key = e.getKeyCode();
 
             if (key == KeyEvent.VK_A) {
+<<<<<<< HEAD
                 setX(getX()-5);
             }
             if (key == KeyEvent.VK_D) {
@@ -66,18 +84,47 @@ public class WASD extends Submarine
             }
             if (key == KeyEvent.VK_S) {
                 setY(getY()+5);
+=======
+                x = -5;
+                //repaint();
             }
-            draw(G);
-        }
+            if (key == KeyEvent.VK_D) {
+                x = 5;
+                //repaint();
+            }
+            if (key == KeyEvent.VK_W) {
+                y = -5;
+                //repaint();
+>>>>>>> e46168c452d9bfcd2d90e65756dd163f640d3688
+            }
+            if (key == KeyEvent.VK_S) {
+                y = 5;
+                // repaint();
 
-        public void keyReleased(KeyEvent e){
-            int key = e.getKeyCode();
-            if (key == KeyEvent.VK_SPACE) {
-                fire();
+                if (key == KeyEvent.VK_LEFT) {
+                    setX(getX()-5);
+                }
+                if (key == KeyEvent.VK_RIGHT) {
+                    setX(getX()+5);
+                }
+                if (key == KeyEvent.VK_UP) {
+                    setY(getY()-5);
+                }
+                if (key == KeyEvent.VK_DOWN) {
+                    setY(getY()+5);
+
+                }
+                draw(G);
             }
-            if (key == KeyEvent.VK_X){
-                submerge();
+
+            public void keyReleased(KeyEvent e){
+                int key = e.getKeyCode();
+                if (key == KeyEvent.VK_SPACE) {
+                    fire();
+                }
+                if (key == KeyEvent.VK_X){
+                    submerge();
+                }
             }
         }
     }
-}

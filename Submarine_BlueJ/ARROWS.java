@@ -51,6 +51,22 @@ public class ARROWS extends Submarine
         public void keyPressed(KeyEvent e){
             int key = e.getKeyCode();
             if (key == KeyEvent.VK_LEFT) {
+<<<<<<< HEAD
+                x = -5;
+                //repaint();
+            }
+            if (key == KeyEvent.VK_RIGHT) {
+                x = 5;
+                //repaint();
+            }
+            if (key == KeyEvent.VK_UP) {
+                y = -5;
+                //repaint();
+            }
+            if (key == KeyEvent.VK_DOWN) {
+                y = 5;
+                //repaint();
+=======
                 setX(getX()-5);
             }
             if (key == KeyEvent.VK_RIGHT) {
@@ -61,6 +77,7 @@ public class ARROWS extends Submarine
             }
             if (key == KeyEvent.VK_DOWN) {
                 setY(getY()+5);
+>>>>>>> 67cb52596ae41c86dd1d85fa88cc1225d7b1bd2d
             }
             draw(G);
         }
