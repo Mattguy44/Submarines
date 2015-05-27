@@ -17,6 +17,7 @@ public class Play
     private boolean [][] obstacles;
     private Submarine p1;
     private Submarine p2;
+    private Graphics G;
     public Play (int width, int height) {
         BOARD_WIDTH = width;
         BOARD_HEIGHT = height;
@@ -84,6 +85,7 @@ public class Play
             this.setTitle("Submarines");
             this.add(pan);
             pan.setBackground(Color.CYAN);
+            pan.addKeyListener(new Listener());
             this.setVisible(true);
             //islands();
         }
@@ -100,6 +102,7 @@ public class Play
                         m.fillRect(r*5, c*5, 5, 5);
                 }
             }
+            G = m;
             p1.draw(m);
             p2.draw(m);
         }
@@ -107,5 +110,35 @@ public class Play
         public void init(){}
         public void start(){}
         public void stop(){}
+    }
+    
+    private class Listener implements KeyListener {
+        public void keyTyped(KeyEvent e) {}
+        public void keyPressed(KeyEvent e){
+            int key = e.getKeyCode();
+            if (key == KeyEvent.VK_LEFT) {
+                p1.setX(p1.getX()-5);
+            }
+            if (key == KeyEvent.VK_RIGHT) {
+                p1.setX(p1.getX()+5);
+            }
+            if (key == KeyEvent.VK_UP) {
+                p1.setY(p1.getY()-5);
+            }
+            if (key == KeyEvent.VK_DOWN) {
+                p1.setY(p1.getY()+5);
+            }
+            p1.draw(G);
+        }
+
+        public void keyReleased(KeyEvent e){
+            int key = e.getKeyCode();
+            if (key == KeyEvent.VK_SHIFT) {
+                p1.fire();
+            }
+            if (key == KeyEvent.VK_SLASH){
+                p1.submerge();
+            }
+        }
     }
 }

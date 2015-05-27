@@ -19,11 +19,8 @@ public class ARROWS extends Submarine
     {
         super(isUnder, torpedoes, locX, locY);
     }
-    public String getDir(){
-        return curDir;
-    }
     public void draw(Graphics g){
-        g.setColor(Color_RED);
+        g.setColor(Color.RED);
         if(isUnder()){
             g.setColor(Color.BLACK);
         }

@@ -3,22 +3,12 @@ comment0.params=isUnder\ tors\ locX\ locY
 comment0.target=Submarine(boolean,\ int,\ int,\ int)
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
-comment10.params=g
-comment10.target=void\ draw(java.awt.Graphics)
+comment10.params=dir
+comment10.target=void\ setDirection(java.lang.String)
+comment11.params=g
+comment11.target=void\ draw(java.awt.Graphics)
 comment2.params=
 comment2.target=void\ fire()
-<<<<<<< HEAD
-comment3.params=x\ y
-comment3.target=void\ setLocation(int,\ int)
-<<<<<<< HEAD
-comment4.params=g
-comment4.target=void\ draw(java.awt.Graphics)
-=======
-comment4.params=dir
-comment4.target=void\ setDirection(java.lang.String)
->>>>>>> 888de62d12f82c6acf9a612659ce6759736e1507
-numComments=5
-=======
 comment3.params=x
 comment3.target=void\ setX(int)
 comment4.params=y
@@ -31,7 +21,6 @@ comment7.params=
 comment7.target=boolean\ isUnder()
 comment8.params=
 comment8.target=void\ submerge()
-comment9.params=dir
-comment9.target=void\ setDirection(java.lang.String)
-numComments=11
->>>>>>> 5eb275168bceb50bf3c47fb38504e85ff069ad9e
+comment9.params=
+comment9.target=java.lang.String\ getDir()
+numComments=12

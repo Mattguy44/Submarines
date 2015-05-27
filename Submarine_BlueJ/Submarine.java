@@ -37,7 +37,6 @@ public abstract class Submarine
         locationY = y;
     }
 
-    public abstract void draw(Graphics g);
     public int getX(){
         return locationX;
     }
@@ -53,10 +52,13 @@ public abstract class Submarine
         else
             isUnderwater = true;
     }
-    public String getDir(String curDir){
+    public String getDir(){
+        return curDir;
     }
 
-    public void setDirection(String dir);
+    public void setDirection(String dir){
+        curDir = dir;
+    }
     public abstract void draw(Graphics g);
     
 

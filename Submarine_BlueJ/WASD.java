@@ -20,12 +20,7 @@ public class WASD extends Submarine
     {
         super(isUnder,torpedoes, locX, locY);
     }
-    public String getDir(){
-        return curDir;
-    }
-<<<<<<< HEAD
 
-=======
     public void draw(Graphics g){
         g.setColor(Color.RED);
         if(isUnder()){
@@ -34,59 +29,43 @@ public class WASD extends Submarine
         else{
             g.setColor(Color.RED);
         }
-        if(this.getDir().equals("UP")){
+        if(getDir().equals("UP")){
             g.fillOval(getX(),getY(),15,40);
             g.fillRect(getX()-5,getY(),10,5);
         }
-        if(this.getDir().equals("RIGHT")){
+        if(getDir().equals("RIGHT")){
             g.fillOval(getX(),getY(),40,15);
             g.fillRect(getX()-5,getY(),10,5);
         }
-        if(this.getDir().equals("LEFT")){
+        if(getDir().equals("LEFT")){
             g.fillOval(getX(),getY(),40,15);
             g.fillRect(getX()-5,getY(),10,5);
         }
-        if(this.getDir().equals("DOWN")){
-             g.fillOval(getX(),getY(),15,40);
-             g.fillRect(getX()-5,getY(),10,5);
+        if(getDir().equals("DOWN")){
+            g.fillOval(getX(),getY(),15,40);
+            g.fillRect(getX()-5,getY(),10,5);
         }
         g.fillOval(getX()-20,getY()-8,40,15);
         G = g;
     }
->>>>>>> 67cb52596ae41c86dd1d85fa88cc1225d7b1bd2d
+
     private class Listener implements KeyListener {
         public void keyTyped(KeyEvent e) {}
+
         public void keyPressed(KeyEvent e){
             int key = e.getKeyCode();
-<<<<<<< HEAD
+
             if (key == KeyEvent.VK_A) {
-                x = -25;
-                repaint();
-            }
-            if (key == KeyEvent.VK_D) {
-                x = 25;
-                repaint();
-            }
-            if (key == KeyEvent.VK_W) {
-                y = -25;
-                repaint();
-            }
-            if (key == KeyEvent.VK_S) {
-                y = 25;
-                repaint();
-=======
-            if (key == KeyEvent.VK_LEFT) {
                 setX(getX()-5);
             }
-            if (key == KeyEvent.VK_RIGHT) {
+            if (key == KeyEvent.VK_D) {
                 setX(getX()+5);
             }
-            if (key == KeyEvent.VK_UP) {
+            if (key == KeyEvent.VK_W) {
                 setY(getY()-5);
             }
-            if (key == KeyEvent.VK_DOWN) {
+            if (key == KeyEvent.VK_S) {
                 setY(getY()+5);
->>>>>>> 67cb52596ae41c86dd1d85fa88cc1225d7b1bd2d
             }
             draw(G);
         }
