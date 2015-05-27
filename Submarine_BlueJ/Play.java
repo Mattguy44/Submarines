@@ -12,15 +12,15 @@ public class Play
 {
     //private Submarine p1 = new ARROWS();
     //private Submarine p2 = new WASD();
-    private int BOARD_WIDTH;
-    private int BOARD_HEIGHT;
+    private int BOARD_WIDTH = 500;
+    private int BOARD_HEIGHT = 500;
     private boolean [][] obstacles;
     private Submarine p1;
     private Submarine p2;
     private Graphics G;
-    public Play (int width, int height) {
-        BOARD_WIDTH = width;
-        BOARD_HEIGHT = height;
+    public Play () {
+        //BOARD_WIDTH = width;
+        //BOARD_HEIGHT = height;
         p1 = new ARROWS(false, 5, BOARD_WIDTH - 50, 50);
         p2 = new WASD(false, 5, 50, BOARD_HEIGHT - 50);
         createBoard();
