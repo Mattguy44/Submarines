@@ -72,24 +72,24 @@ public class SimpleTorpedo
             }
         }
 
-        if(obstacle[centerX][centerY]){ 
+       /* if(obstacle[centerX][centerY]){ 
             cont=false;
             if(centerX%2==1&&isUnderWater||centerX%2==0&&!isUnderWater) 
                 obstacle[centerX][centerY]=false;
-        } //works only when very very lucky hahaha... who will be the award winner?
+        } */ //works only when very very lucky hahaha... who will be the award winner?
         else if( this.isUnderWater==opp.isUnderWater()
         &&      Math.abs(opp.getCenterX()-centerX)<= opp.getWidth()/2.
         &&      Math.abs(opp.getCenterY()-centerY)<= opp.getHeight()/2.){
             opp.setExploding (true);
-            opp.setFrameNumber (1);        
+            //opp.setFrameNumber (1);
             cont=false;
         }
         else{
             if(direction.equals ("l")){
                 int ix=-0;
                 int speedAtGivenTime=0;
-                while(centerX-tWidth/2-ix-1>=0&&
-                (ix<speedTor&&!obstacle[centerX-tWidth/2][centerY])){
+                while((centerX-tWidth/2-ix-1>=-36) &&
+                (ix<speedTor/*&&!obstacle[centerX-tWidth/2][centerY]*/)){
                     ix++;
                 }
                 speedAtGivenTime=ix;
@@ -98,8 +98,8 @@ public class SimpleTorpedo
             else if(direction.equals("r")){
                 int ix=0;
                 int speedAtGivenTime=0;
-                while(centerX+tWidth/2+ix+1<obstacle.length&&
-                (ix<speedTor&&!obstacle[centerX+tWidth/2][centerY])){
+                while(centerX+tWidth/2+ix+1<obstacle.length+36&&
+                (ix<speedTor/*&&!obstacle[centerX+tWidth/2][centerY]*/)){
                     ix++;
                 }
                 speedAtGivenTime=ix;
@@ -108,8 +108,8 @@ public class SimpleTorpedo
             else if(direction.equals("u")){
                 int ix=-0;
                 int speedAtGivenTime=0;
-                while(centerY-tHeight/2-ix-1>=0&&
-                (ix<speedTor&&!obstacle[centerX][centerY-tHeight/2])){
+                while(centerY-tHeight/2-ix-1>=-36&&
+                (ix<speedTor/*&&!obstacle[centerX][centerY-tHeight/2]*/)){
                     ix++;
                 }
                 speedAtGivenTime=ix;
@@ -118,8 +118,8 @@ public class SimpleTorpedo
             else if(direction.equals("d")){
                 int ix=0;
                 int speedAtGivenTime=0;
-                while(centerY+tHeight/2+ix+1<obstacle[0].length&&
-                (ix<speedTor&&!obstacle[centerX][centerY+tHeight/2])){
+                while(centerY+tHeight/2+ix+1<obstacle[0].length+36&&
+                (ix<speedTor/*&&!obstacle[centerX][centerY+tHeight/2]*/)){
                     ix++;
                 }
                 speedAtGivenTime=ix;
