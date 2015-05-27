@@ -1,5 +1,5 @@
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import java.awt.event.*;
+import java.awt.*;
 /**
  * Write a description of class WASD here.
  * 
@@ -8,59 +8,54 @@ import java.awt.event.KeyListener;
  */
 public class WASD extends Submarine
 {
-    private int x;
+    /*private int x;
     private int y;
-    private boolean underWater = false;
-    private int numTorpedoes;
+    private boolean underWater;
+    private int numTorpedoes;*/
+    // above out because handled in superclass
+    private Graphics G;
     //X for under
     //space for shoot
-    public WASD(boolean isUnder, int torpedoes)
+    public WASD(boolean isUnder, int torpedoes, int locX, int locY)
     {
-        super(isUnder,torpedoes);
+        super(isUnder,torpedoes, locX, locY);
     }
     public void draw(Graphics g){
-        if(underwater=true){
+        if(isUnder()){
             g.setColor(Color.BLACK);
         }
         else{
             g.setColor(Color.RED);
         }
-        g.drawOval(50,10,x,y);
+        g.fillOval(getX()-20,getY()-8,40,15);
+        G = g;
     }
     private class Listener implements KeyListener {
         public void keyTyped(KeyEvent e) {}
         public void keyPressed(KeyEvent e){
             int key = e.getKeyCode();
-            if (key == KeyEvent.VK_A) {
-                x = -5;
-                repaint();
+            if (key == KeyEvent.VK_LEFT) {
+                setX(getX()-5);
             }
-            if (key == KeyEvent.VK_D) {
-                x = 5;
-                repaint();
+            if (key == KeyEvent.VK_RIGHT) {
+                setX(getX()+5);
             }
-            if (key == KeyEvent.VK_W) {
-                y = -5;
-                repaint();
+            if (key == KeyEvent.VK_UP) {
+                setY(getY()-5);
             }
-            if (key == KeyEvent.VK_S) {
-                y = 5;
-                repaint();
+            if (key == KeyEvent.VK_DOWN) {
+                setY(getY()+5);
             }
+            draw(G);
         }
 
         public void keyReleased(KeyEvent e){
             int key = e.getKeyCode();
             if (key == KeyEvent.VK_SPACE) {
-                numTorpedoes--;
+                fire();
             }
             if (key == KeyEvent.VK_X){
-                if(underWater == false){
-                    underWater = true;
-                }
-                else{
-                    underWater = false;
-                }
+                submerge();
             }
         }
     }

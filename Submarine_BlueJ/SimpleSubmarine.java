@@ -169,7 +169,7 @@ public class SimpleSubmarine
             if(direction.equals ("l")){
                 int ix=0;
                 while(centerX-width/2-ix-1>=0&&
-                (ix<speed&&!obstacle[centerX-width/2][centerY])){
+                (ix<speed/*&&!obstacle[centerX-width/2][centerY]*/)){
                     ix++;
                 }
                 centerX-=ix;}
@@ -177,7 +177,7 @@ public class SimpleSubmarine
             else if(direction.equals("r")) {
                 int ix=0;
                 while(centerX+width/2+ix+1<obstacle.length&&
-                (ix<speed&&!obstacle[centerX+width/2][centerY])){
+                (ix<speed/*&&!obstacle[centerX+width/2][centerY]*/)){
                     ix++;
                 }
                 centerX+=ix;
@@ -185,7 +185,7 @@ public class SimpleSubmarine
             else if(direction.equals("u")) {
                 int ix=0;
                 while(centerY-height/2-ix-1>=0&&
-                (ix<speed&&!obstacle[centerX][centerY-height/2])){
+                (ix<speed/*&&!obstacle[centerX][centerY-height/2]*/)){
                     ix++;
                 }
                 centerY-=ix;
@@ -193,7 +193,7 @@ public class SimpleSubmarine
             else if(direction.equals("d")) {
                 int ix=0;
                 while(centerY+height/2+ix+1<obstacle.length&&
-                (ix<speed&&!obstacle[centerX][centerY+height/2])){
+                (ix<speed/*&&!obstacle[centerX][centerY+height/2]*/)){
                     ix++;
                 }
                 centerY+=ix;

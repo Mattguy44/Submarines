@@ -1,4 +1,6 @@
 #BlueJ class context
-comment0.params=isUnder\ torpedoes
-comment0.target=WASD(boolean,\ int)
-numComments=1
+comment0.params=isUnder\ torpedoes\ locX\ locY
+comment0.target=WASD(boolean,\ int,\ int,\ int)
+comment1.params=g
+comment1.target=void\ draw(java.awt.Graphics)
+numComments=2
