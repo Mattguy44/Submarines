@@ -36,11 +36,8 @@ public abstract class Submarine
     public void setY (int y){
         locationY = y;
     }
-<<<<<<< HEAD
 
     public abstract void draw(Graphics g);
-    
-=======
     public int getX(){
         return locationX;
     }
@@ -56,21 +53,17 @@ public abstract class Submarine
         else
             isUnderwater = true;
     }
->>>>>>> 5eb275168bceb50bf3c47fb38504e85ff069ad9e
-
-    public void setDirection(String dir){
-        curDir = dir;
+    public String getDir(String curDir){
     }
 
-<<<<<<< HEAD
-=======
+    public void setDirection(String dir);
     public abstract void draw(Graphics g);
     
 
     //public void paint(Graphics G){
     //}
 
->>>>>>> 5eb275168bceb50bf3c47fb38504e85ff069ad9e
+
     //public abstract boolean submerge(); //returns true if successful sumberge, false if failed
     //public abstract void move(); // differs by keys used (depending on player)
 }

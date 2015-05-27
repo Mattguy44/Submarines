@@ -19,12 +19,32 @@ public class ARROWS extends Submarine
     {
         super(isUnder, torpedoes, locX, locY);
     }
+    public String getDir(){
+        return curDir;
+    }
     public void draw(Graphics g){
+        g.setColor(Color_RED);
         if(isUnder()){
             g.setColor(Color.BLACK);
         }
         else{
             g.setColor(Color.RED);
+        }
+        if(this.getDir().equals("UP")){
+            g.fillOval(getX()-20,getY()-8,40,15);
+            g.fillRect(getX()-5,getY(),10,5);
+        }
+        if(this.getDir().equals("RIGHT")){
+            g.fillOval(getX()-20,getY()-8,40,15);
+            g.fillRect(getX()-5,getY(),10,5);
+        }
+        if(this.getDir().equals("LEFT")){
+            g.fillOval(getX()-20,getY()-8,40,15);
+            g.fillRect(getX()-5,getY(),10,5);
+        }
+        if(this.getDir().equals("DOWN")){
+            g.fillOval(getX()-20,getY()-8,40,15);
+            g.fillRect(getX()-5,getY(),10,5);
         }
         g.fillOval(getX()-20,getY()-8,40,15);
         G = g;
