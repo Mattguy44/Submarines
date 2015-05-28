@@ -29,14 +29,14 @@ public abstract class Submarine
 
     public void fire(){
 
-
+        numTorpedoes--;
         //new Torpedo(dimmensionsX, isUnderwater);
         //new Torpedo(direction, isUnderwater);
     }
 
     public void setLocation (int x, int y){
 
-        numTorpedoes--;
+        
         //new Torpedo(dimmensionsX, isUnderwater);
         //new Torpedo(direction, isUnderwater);
     }
@@ -74,7 +74,6 @@ public abstract class Submarine
 
     //public void setDirection(String dir);
 
-    public abstract void draw(Graphics g);
     
 
     //public void paint(Graphics G){
