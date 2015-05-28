@@ -28,7 +28,7 @@ public abstract class Submarine
     }
 
     public void fire(){
-
+        
         numTorpedoes--;
         //new Torpedo(dimmensionsX, isUnderwater);
         //new Torpedo(direction, isUnderwater);
