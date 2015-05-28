@@ -18,7 +18,6 @@ public class Play
     private Submarine p1;
     private Submarine p2;
     private Submarine curSub;
-    private Graphics G;
     public Play (int width, int height) {
         BOARD_WIDTH = width;
         BOARD_HEIGHT = height;
@@ -96,8 +95,8 @@ public class Play
             //allow one to choose witch method is repaint
             public void paint(Graphics m){
                 addKeyListener(new Listener());
-                Graphics2D g2=(Graphics2D)m;
-                g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+                //Graphics2D g2=(Graphics2D)m;
+                //g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
                 m.setColor(Color.CYAN);
                 m.fillRect(0,0,BOARD_WIDTH,BOARD_HEIGHT);
                 m.setColor(Color.GREEN);
@@ -111,7 +110,6 @@ public class Play
                 }
                 drawSub(m,p1);
                 drawSub(m,p2);
-                G = m;
             }
 
             public void paintComponent(Graphics g){
@@ -159,44 +157,48 @@ public class Play
 
                 public void keyPressed(KeyEvent e){
                     int key = e.getKeyCode();
+                    int p1X = p1.getX();
+                    int p1Y = p1.getY();
+                    int p2X = p2.getX();
+                    int p2Y = p2.getY();
                     if (key == KeyEvent.VK_LEFT) {
-                        p1.setX(p1.getX()-5);
+                        p1.setX(p1X-5);
                         p1.setDirection("LEFT");
                         curSub = p1;
                     }
                     if (key == KeyEvent.VK_RIGHT) {
-                        p1.setX(p1.getX()+5);
+                        p1.setX(p1X+5);
                         p1.setDirection("RIGHT");
                         curSub = p1;
                     }
                     if (key == KeyEvent.VK_UP) {
-                        p1.setY(p1.getY()-5);
+                        p1.setY(p1Y-5);
                         p1.setDirection("UP");
                         curSub = p1;
                     }
                     if (key == KeyEvent.VK_DOWN) {
-                        p1.setY(p1.getY()+5);
+                        p1.setY(p1Y+5);
                         p1.setDirection("DOWN");
                         curSub = p1;
                     }
                     //p1.draw(G);
                     if (key == KeyEvent.VK_A) {
-                        p2.setX(p2.getX()-5);
+                        p2.setX(p2X-5);
                         p2.setDirection("LEFT");
                         curSub = p2;
                     }
                     if (key == KeyEvent.VK_D) {
-                        p2.setX(p2.getX()+5);
+                        p2.setX(p2X+5);
                         p2.setDirection("RIGHT");
                         curSub = p2;
                     }
                     if (key == KeyEvent.VK_W) {
-                        p2.setY(p2.getY()-5);
+                        p2.setY(p2Y-5);
                         p2.setDirection("UP");
                         curSub = p2;
                     }
                     if (key == KeyEvent.VK_S) {
-                        p2.setY(p2.getY()+5);
+                        p2.setY(p2Y+5);
                         p2.setDirection("DOWN");
                         curSub = p2;
                     }
