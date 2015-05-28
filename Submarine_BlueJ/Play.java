@@ -12,14 +12,15 @@ public class Play
 {
     //private Submarine p1 = new ARROWS();
     //private Submarine p2 = new WASD();
-    private int BOARD_WIDTH;
-    private int BOARD_HEIGHT;
+    private int BOARD_WIDTH = 500;
+    private int BOARD_HEIGHT = 500;
     private boolean [][] obstacles;
     private Submarine p1;
     private Submarine p2;
-    public Play (int width, int height) {
-        BOARD_WIDTH = width;
-        BOARD_HEIGHT = height;
+    private Graphics G;
+    public Play () {
+        //BOARD_WIDTH = width;
+        //BOARD_HEIGHT = height;
         p1 = new ARROWS(false, 5, BOARD_WIDTH - 50, 50);
         p2 = new WASD(false, 5, 50, BOARD_HEIGHT - 50);
         createBoard();
@@ -76,7 +77,7 @@ public class Play
     
     private class Board extends JFrame
     {
-        private JPanel pan = new JPanel();
+        Pan pan = new Pan();
         public Board(){
             
             this.setSize(BOARD_WIDTH,BOARD_HEIGHT);
@@ -84,11 +85,15 @@ public class Play
             this.setTitle("Submarines");
             this.add(pan);
             pan.setBackground(Color.CYAN);
+            pan.addKeyListener(new Listener());
             this.setVisible(true);
             //islands();
         }
-        
+        private class Pan extends JPanel{
         public void paint(Graphics m){
+            paintComponent(m);
+            Graphics2D g2=(Graphics2D)m;
+            g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
             m.setColor(Color.CYAN);
             m.fillRect(0,0,BOARD_WIDTH,BOARD_HEIGHT);
             m.setColor(Color.GREEN);
@@ -100,6 +105,7 @@ public class Play
                         m.fillRect(r*5, c*5, 5, 5);
                 }
             }
+            G = m;
             p1.draw(m);
             p2.draw(m);
         }
@@ -107,5 +113,37 @@ public class Play
         public void init(){}
         public void start(){}
         public void stop(){}
+    }
+    }
+    
+    private class Listener implements KeyListener {
+        public Listener(){}
+        public void keyTyped(KeyEvent e) {keyPressed(e);}
+        public void keyPressed(KeyEvent e){
+            int key = e.getKeyCode();
+            if (key == KeyEvent.VK_LEFT) {
+                p1.setX(p1.getX()-5);
+            }
+            if (key == KeyEvent.VK_RIGHT) {
+                p1.setX(p1.getX()+5);
+            }
+            if (key == KeyEvent.VK_UP) {
+                p1.setY(p1.getY()-5);
+            }
+            if (key == KeyEvent.VK_DOWN) {
+                p1.setY(p1.getY()+5);
+            }
+            p1.draw(G);
+        }
+
+        public void keyReleased(KeyEvent e){
+            int key = e.getKeyCode();
+            if (key == KeyEvent.VK_SHIFT) {
+                p1.fire();
+            }
+            if (key == KeyEvent.VK_SLASH){
+                p1.submerge();
+            }
+        }
     }
 }

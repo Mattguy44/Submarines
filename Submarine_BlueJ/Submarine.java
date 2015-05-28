@@ -22,20 +22,37 @@ public abstract class Submarine
         locationX = locX;
         locationY = locY;
     }
+
     public static void main(String [] args){
         //new JFrameAdded();
     }
+
     public void fire(){
+
+
+        //new Torpedo(dimmensionsX, isUnderwater);
+        //new Torpedo(direction, isUnderwater);
+    }
+
+    public void setLocation (int x, int y){
+
         numTorpedoes--;
         //new Torpedo(dimmensionsX, isUnderwater);
         //new Torpedo(direction, isUnderwater);
     }
     public void setX (int x){
+
         locationX = x;
     }
     public void setY (int y){
         locationY = y;
     }
+
+    public void setDirection(String dir){
+        curDir = dir;
+    }
+
+
     public int getX(){
         return locationX;
     }
@@ -51,16 +68,19 @@ public abstract class Submarine
         else
             isUnderwater = true;
     }
-
-    public void setDirection(String dir){
-        curDir = dir;
+    public String getDir(){
+        return curDir;
     }
+
+    //public void setDirection(String dir);
 
     public abstract void draw(Graphics g);
     
 
     //public void paint(Graphics G){
     //}
+
+
 
     //public abstract boolean submerge(); //returns true if successful sumberge, false if failed
     //public abstract void move(); // differs by keys used (depending on player)
