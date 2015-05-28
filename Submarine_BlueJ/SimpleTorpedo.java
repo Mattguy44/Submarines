@@ -2,19 +2,21 @@ import java.awt.*;
 /**
  * Write a description of class Torpedo here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (your name) Neo
+ * @version (a version number or a date)5/25/15
  */
 public class SimpleTorpedo
 {
+    //instance variables
     private int speedTor;
     private boolean isUnderWater;
     private int centerX,centerY;
     private String direction;
-    private boolean [][] obstacle; //SimpleSubmarine doesn't count
+    private boolean [][] obstacle; //hidden place
     private static int tWidth=24,tHeight=24; //Example
     private boolean cont;
     private int explosionFrameNumber;  
+    private static boolean firstPrint=true;
     /**
      * Constructor to create a Torpedo with right location, direction, known map, and other states.
      */
@@ -63,13 +65,17 @@ public class SimpleTorpedo
         {
             explosionFrameNumber++;
             if (explosionFrameNumber == 20) {
+                if(firstPrint){
                 opp.setExploding(false);
                 cont=false;
+                
                 System.out.println(opp.getEName()+" wins!~~~ Congrats!");
-            }
+                firstPrint=false;
+                }//checks if it's the first time to annouce the winner
+            } //print the message: winner when the explosion animation frame equals to twenty
             else if (explosionFrameNumber == 550){
                 System.exit(0);
-            }
+            }  //GUI screen automatically close when the explosion animation frame equals to 550
         }
 
        /* if(obstacle[centerX][centerY]){ 
@@ -82,12 +88,14 @@ public class SimpleTorpedo
         &&      Math.abs(opp.getCenterY()-centerY)<= opp.getHeight()/2.){
             opp.setExploding (true);
             //opp.setFrameNumber (1);
+            //Don't worry about it: original plan to make submarine explode but failed
             cont=false;
         }
         else{
             if(direction.equals ("l")){
                 int ix=-0;
                 int speedAtGivenTime=0;
+                //Note: obstacles changed from orignal plan of blocking to hiding...
                 while((centerX-tWidth/2-ix-1>=-36) &&
                 (ix<speedTor/*&&!obstacle[centerX-tWidth/2][centerY]*/)){
                     ix++;
@@ -127,6 +135,7 @@ public class SimpleTorpedo
             }
             else
                 System.out.print("Error: check if right direction is assigned!");
+            //move at the right direction until torpedo touches the screen
         }
     }
 
@@ -139,7 +148,7 @@ public class SimpleTorpedo
         else
             g.setColor(Color.black);
         g.fillOval(centerX-tWidth/2,centerY-tHeight/2,tWidth,tHeight);
-        //Make the Torpedo a circle for convenience.
+        //Make the Torpedo a circle for convenience. (After the torpedo is fired before hitting the opponent.)
         if(!cont){
             g.setColor(Color.yellow);
 
@@ -156,5 +165,6 @@ public class SimpleTorpedo
                 2*explosionFrameNumber
             );
         }
+        //If torpedo hits the opponent submarine , the explosion starts
     }
 }
