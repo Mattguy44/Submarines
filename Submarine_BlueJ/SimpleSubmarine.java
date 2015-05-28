@@ -2,8 +2,8 @@ import java.awt.*;
 /**
  * Write a description of class SimpleSubmarine here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (your name) Neo
+ * @version (a version number or a date)5/25/15
  */
 public class SimpleSubmarine
 {
@@ -13,10 +13,12 @@ public class SimpleSubmarine
     private boolean isUnderWater;
     private int centerX,centerY;
     private boolean isExploding;
+    //checking if the submarine is exploding
     private String direction;  
     private boolean [][] obstacle;
     private static int width=48,height=48;
-    private int explosionFrameNumber;  
+    private int explosionFrameNumber;
+    //Don't worry about explosionFrameNumber: original plan to make submarine draw explosion but failed
     private SimpleTorpedo st;
     private String Ename;
     /**
@@ -32,6 +34,8 @@ public class SimpleSubmarine
         speed = magVelocity;
         isUnderWater = uw;
         isExploding=false;
+        //At the first the submarine isn't exploding
+        
         int centerTorpedoX=centerX, centerTorpedoY=centerY;
         /*if(direction.equals ("l")){
         centerTorpedoX=centerTorpedoX-width/2-SimpleTorpedo.getTWidth()/2;
@@ -45,7 +49,10 @@ public class SimpleSubmarine
         else if(direction.equals ("d")){
         centerTorpedoY=centerTorpedoY+height/2+SimpleTorpedo.getTHeight()/2;
         }*/
+        //More complex version for finding location of torpedo
+        
         st=null;
+        //at first there is no torpedo
     }
 
     //accessors
@@ -103,16 +110,18 @@ public class SimpleSubmarine
      * Accessor method: get the name of enermy of the submarine
      */
     public String getEName(){return Ename;}
+    
     //mutators
     /**
      * Mutator method: decide whether the submarine is exploding
      */
     public void setExploding(boolean ex) {isExploding=ex;}
-
+    
     /**
      * Mutator method: set the frame number of the explosion animation
      */
     public void setFrameNumber(int frame) {explosionFrameNumber=frame;}
+    //Don't worry about void setFrameNumber(int frame): original plan to make submarine draw explosion but failed
 
     /**
      * Mutator method: set the direction of submarine
@@ -131,6 +140,8 @@ public class SimpleSubmarine
     public void speedReset() 
     {speed=0;
      torSpeed=0;
+     if(st!=null) 
+     st.speedReset();
     }
     
     /**
@@ -151,6 +162,7 @@ public class SimpleSubmarine
         else if(direction.equals ("d")){
         centerTorpedoY=centerTorpedoY+height/2+SimpleTorpedo.getTHeight()/2;
         }*/
+        //Decide to start from the center of submarine for convenience
         st=new SimpleTorpedo(obstacle,direction,centerTorpedoX,centerTorpedoY,torSpeed,speed,isUnderWater);
     }
 
@@ -164,10 +176,12 @@ public class SimpleSubmarine
             isExploding=false;
             System.out.println(Ename+" wins, congrats!");
             }*/
+            //Don't worry about it: original plan to make submarine explode but failed
         }
         else {
             if(direction.equals ("l")){
                 int ix=0;
+                //Note: obstacles changed from orignal plan of blocking to hiding...
                 while(centerX-width/2-ix-1>=0&&
                 (ix<speed/*&&!obstacle[centerX-width/2][centerY]*/)){
                     ix++;
@@ -211,6 +225,7 @@ public class SimpleSubmarine
             g.setColor(Color.green);
         else
             g.setColor(Color.black);
+        //draw the rectangle stands for submarien with right color as its state of above or below water
         g.fillRect(centerX-width/2,centerY-height/2,width,height);
         /*if(isExploding){
         g.setColor(Color.yellow);
@@ -227,10 +242,10 @@ public class SimpleSubmarine
         4*explosionFrameNumber,
         2*explosionFrameNumber
         );
-        }*/
+        }*/  //Don't worry about it: original plan to make submarine explode but failed
         
 
         if(st!=null)
-            st.draw(g);
+            st.draw(g); //if submarine has its own torpedo, draw it.
     }
 }
