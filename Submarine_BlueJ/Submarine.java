@@ -28,7 +28,7 @@ public abstract class Submarine
     }
 
     public void fire(){
-        
+
         numTorpedoes--;
         //new Torpedo(dimmensionsX, isUnderwater);
         //new Torpedo(direction, isUnderwater);
@@ -36,14 +36,15 @@ public abstract class Submarine
 
     public void setLocation (int x, int y){
 
-        
         //new Torpedo(dimmensionsX, isUnderwater);
         //new Torpedo(direction, isUnderwater);
     }
+
     public void setX (int x){
 
         locationX = x;
     }
+
     public void setY (int y){
         locationY = y;
     }
@@ -52,33 +53,50 @@ public abstract class Submarine
         curDir = dir;
     }
 
-
     public int getX(){
         return locationX;
     }
+
     public int getY(){
         return locationY;
     }
+
     public boolean isUnder(){
         return isUnderwater;
     }
+
     public void submerge(){
         if (isUnderwater)
             isUnderwater = false;
         else
             isUnderwater = true;
     }
+
     public String getDir(){
         return curDir;
     }
 
+    public void move(String dir){
+        curDir = dir;
+        if (dir.equals("LEFT")) {
+            locationX -= 5;
+        }
+        if (dir == "RIGHT") {
+            locationX += 5;
+        }
+        if (dir == "UP") {
+            locationY -= 5;
+        }
+        if (dir == "DOWN") {
+            locationY += 5;
+        }
+    }
+
     //public void setDirection(String dir);
 
-    
 
     //public void paint(Graphics G){
     //}
-
 
 
     //public abstract boolean submerge(); //returns true if successful sumberge, false if failed

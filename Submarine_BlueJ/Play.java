@@ -18,6 +18,13 @@ public class Play
     private Submarine p1;
     private Submarine p2;
     private Submarine curSub;
+    public Play () {
+        BOARD_WIDTH=500;
+        BOARD_HEIGHT=500;
+        p1 = new ARROWS(false, 5, 450, 50);
+        p2 = new WASD(false, 5, 50, 450);
+        createBoard();
+    }
     public Play (int width, int height) {
         BOARD_WIDTH = width;
         BOARD_HEIGHT = height;
@@ -75,6 +82,17 @@ public class Play
         return false;
     }
 
+    public boolean openSea (String dir, Submarine sub){
+        if (dir.equals("LEFT"))
+            return (sub.getX()-5)/5 >= 0 && !obstacles[(sub.getX()-5)/5][sub.getY()/5];
+        if (dir.equals("RIGHT"))
+            return (sub.getX()+5)/5 < obstacles[0].length && !obstacles[(sub.getX()+5)/5][sub.getY()/5];
+        if (dir.equals("UP"))
+            return (sub.getY()-5)/5 >= 0 && !obstacles[sub.getX()/5][(sub.getY()-5)/5];
+        if (dir.equals("DOWN"))
+            return (sub.getY()+5)/5 < obstacles.length && !obstacles[sub.getX()/5][(sub.getY()+5)/5];
+        return false;
+    }
     private class Board extends JFrame
     {
         Pan pan = new Pan();
@@ -93,8 +111,10 @@ public class Play
         private class Pan extends JPanel{ 
             //In here because making a JPanel object does not 
             //allow one to choose witch method is repaint
+            private Timer time;
+            private Listener listen = new Listener();
             public void paint(Graphics m){
-                addKeyListener(new Listener());
+                addKeyListener(listen);
                 //Graphics2D g2=(Graphics2D)m;
                 //g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
                 m.setColor(Color.CYAN);
@@ -145,61 +165,71 @@ public class Play
 
             }
 
-            public void init(){}
+            public void init(){/*time = new Timer(100,listen); time.start();*/}
 
             public void start(){}
 
             public void stop(){}
-            private class Listener implements KeyListener { //In here for access to repaint()
+            private class Listener implements KeyListener /*ActionListener*/{ //In here for access to repaint()
                 public Listener(){}
 
-                public void keyTyped(KeyEvent e) {keyPressed(e);}
+                public void keyTyped(KeyEvent e) {}
+                
+                /*public void actionPerformed(ActionEvent e){}*/
 
                 public void keyPressed(KeyEvent e){
                     int key = e.getKeyCode();
-                    int p1X = p1.getX();
+                    /*int p1X = p1.getX();
                     int p1Y = p1.getY();
                     int p2X = p2.getX();
-                    int p2Y = p2.getY();
-                    if (key == KeyEvent.VK_LEFT) {
-                        p1.setX(p1X-5);
-                        p1.setDirection("LEFT");
+                    int p2Y = p2.getY();*/
+                    if (key == KeyEvent.VK_LEFT && openSea("LEFT", p1)) {
+                        //p1.setX(p1X-5);
+                        //p1.setDirection("LEFT");
+                        p1.move("LEFT");
                         curSub = p1;
                     }
-                    if (key == KeyEvent.VK_RIGHT) {
-                        p1.setX(p1X+5);
-                        p1.setDirection("RIGHT");
+                    if (key == KeyEvent.VK_RIGHT && openSea("RIGHT", p1)) {
+                        //p1.setX(p1X+5);
+                        //p1.setDirection("RIGHT");
+                        p1.move("RIGHT");
                         curSub = p1;
                     }
-                    if (key == KeyEvent.VK_UP) {
-                        p1.setY(p1Y-5);
-                        p1.setDirection("UP");
+                    if (key == KeyEvent.VK_UP && openSea("UP", p1)) {
+                        //p1.setY(p1Y-5);
+                        //p1.setDirection("UP");
+                        p1.move("UP");
                         curSub = p1;
                     }
-                    if (key == KeyEvent.VK_DOWN) {
-                        p1.setY(p1Y+5);
-                        p1.setDirection("DOWN");
+                    if (key == KeyEvent.VK_DOWN && openSea("DOWN", p1)) {
+                        //p1.setY(p1Y+5);
+                        //p1.setDirection("DOWN");
+                        p1.move("DOWN");
                         curSub = p1;
                     }
                     //p1.draw(G);
-                    if (key == KeyEvent.VK_A) {
-                        p2.setX(p2X-5);
-                        p2.setDirection("LEFT");
+                    if (key == KeyEvent.VK_A && openSea("LEFT", p2)) {
+                        //p2.setX(p2X-5);
+                        //p2.setDirection("LEFT");
+                        p2.move("LEFT");
                         curSub = p2;
                     }
-                    if (key == KeyEvent.VK_D) {
-                        p2.setX(p2X+5);
-                        p2.setDirection("RIGHT");
+                    if (key == KeyEvent.VK_D && openSea("RIGHT", p2)) {
+                        //p2.setX(p2X+5);
+                        //p2.setDirection("RIGHT");
+                        p2.move("RIGHT");
                         curSub = p2;
                     }
-                    if (key == KeyEvent.VK_W) {
-                        p2.setY(p2Y-5);
-                        p2.setDirection("UP");
+                    if (key == KeyEvent.VK_W && openSea("UP", p2)) {
+                        //p2.setY(p2Y-5);
+                        //p2.setDirection("UP");
+                        p2.move("UP");
                         curSub = p2;
                     }
-                    if (key == KeyEvent.VK_S) {
-                        p2.setY(p2Y+5);
-                        p2.setDirection("DOWN");
+                    if (key == KeyEvent.VK_S && openSea("DOWN", p2)) {
+                        //p2.setY(p2Y+5);
+                        //p2.setDirection("DOWN");
+                        p2.move("DOWN");
                         curSub = p2;
                     }
                     repaint();
