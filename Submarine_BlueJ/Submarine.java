@@ -33,6 +33,11 @@ public abstract class Submarine
         //new Torpedo(dimmensionsX, isUnderwater);
         //new Torpedo(direction, isUnderwater);
     }
+    
+    public void addTorpedo(){
+        numTorpedoes++;
+        System.out.print(numTorpedoes + ", ");
+    }
 
     public void setLocation (int x, int y){
 

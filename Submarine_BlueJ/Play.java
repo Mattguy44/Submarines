@@ -18,6 +18,7 @@ public class Play
     private Submarine p1;
     private Submarine p2;
     private Submarine curSub;
+    private Graphics G;
     public Play () {
         BOARD_WIDTH=500;
         BOARD_HEIGHT=500;
@@ -102,6 +103,7 @@ public class Play
             this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             this.setTitle("Submarines");
             this.add(pan);
+            pan.first();
             pan.setBackground(Color.CYAN); // not sure if this is doing anything...
             //pan.addKeyListener(new Listener()); // now handled in Pan class
             pan.setFocusable(true); // allows keys to be listened for in panel
@@ -113,8 +115,19 @@ public class Play
             //allow one to choose witch method is repaint
             private Timer time;
             private Listener listen = new Listener();
-            public void paint(Graphics m){
+            public void first(){
                 addKeyListener(listen);
+                time = new Timer(5000,listen); 
+                time.start();
+                //drawSub(G, p1);
+                //drawSub(G, p2);
+            }
+            public void paint(Graphics m){
+                G = m;
+                /*G = m;
+                addKeyListener(listen);
+                time = new Timer(5000,listen); 
+                time.start();*/
                 //Graphics2D g2=(Graphics2D)m;
                 //g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
                 m.setColor(Color.CYAN);
@@ -165,17 +178,17 @@ public class Play
 
             }
 
-            public void init(){/*time = new Timer(100,listen); time.start();*/}
+            public void init(){}
 
             public void start(){}
 
             public void stop(){}
-            private class Listener implements KeyListener /*ActionListener*/{ //In here for access to repaint()
+            private class Listener implements KeyListener, ActionListener{ //In here for access to repaint()
                 public Listener(){}
 
                 public void keyTyped(KeyEvent e) {}
                 
-                /*public void actionPerformed(ActionEvent e){}*/
+                public void actionPerformed(ActionEvent e){p1.addTorpedo(); p2.addTorpedo();}
 
                 public void keyPressed(KeyEvent e){
                     int key = e.getKeyCode();
@@ -232,6 +245,7 @@ public class Play
                         p2.move("DOWN");
                         curSub = p2;
                     }
+                    //drawSub(G, curSub);
                     repaint();
                 }
 
